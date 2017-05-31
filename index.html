@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/tech21.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -30,23 +31,145 @@
           <h2>Introduction to HTML</h2>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-	          ## Structure of an HTML Page
+        <section>
+          <h2>What is HTML?</h2>
 
-            ```
-            <!DOCTYPE html>
-            <html>
+          <div class="sub-header">Hypertext Markup Language</div>
+
+          <p class="fragment fade-up info">Standardized system that tells the browser how to <em>render</em> (display) information by using tags and attributes as instructions.</p>
+
+          <p class="fragment fade-up info">Browsers transform tags into HTML <em>elements</em> that are contained in the Document Object Model, which is commonly referred to as the <em>DOM</em>.</p>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Tags
+              ```
+              <tag attribute="value"></tag>
+              ```
+              This is the general form of a tag.
+
+              Attributes and values are optional.
+
+              Examples of commonly used tags include:
+
+              ```
+              <div>Division</div>
+              <p>Paragraph</p>
+              <ol>Ordered List</ol>
+              <ul>Unordered List</ul>
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Tags with Content
+              Many tags accept content in between the opening and closing of the tag.
+              ```
+              <div>Content</div>
+              ```
+
+              Some tags do not accept content and can be closed in the opening tag. The Line Break tag is an example:
+              ```
+              <br />
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Nested Tags
+              Tags may also be Nested, meaning that they are contained within the opening and closing of another tag.
+              ```
+              <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+              </ul>
+              ```
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Structure of an HTML Page
+              ```
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>Hello World</title>
+                </head>
+                <body>
+                  <p>Hello World!</p>
+                  <p>This will be displayed in the browser window</p>
+                </body>
+              </html>
+              ```
+              Note how the tags are nested.
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Document Type Declaration
+              ```
+              <!DOCTYPE html>
+              ```
+              Tells the browser to process the document in the latest HTML mode (currently HTML5)
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### HTML Tag
+              ```
+              <html>
+
+              </html>
+              ```
+              The container for all other HTML elements.
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Head Tag
+              ```
               <head>
                 <title>Hello World</title>
+                <meta charset="UTF-8">
+                <meta name="description" content="HTML example">
               </head>
+              ```
+              Container for the head elements, which includes information about the page such as the title and metadata used by machines to gather information about the page (like search engines).
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Body Tag
+              ```
               <body>
-                <div>
-                </div>
+                <p>Hello World!</p>
+                <p>This will be displayed in the browser window</p>
               </body>
-            </html>
-            ```
-          </script>
+              ```
+              Container for the main body of the document. This is where you put the elements you want displayed in the browser window.
+
+              In the example above, two paragraphs with the text content will be rendered.
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <h2>CodePen</h2>
+          <p>We will use <em>CodePen</em> as a tool for learning to write HTML. CodePen is a browser-based app that renders the HTML as we write it.</p>
+          <p>Let's create our CodePen accounts and get started!</p>
+          <a href="https://codepen.io/">https://codepen.io/</a>
         </section>
       </div>
     </div>
