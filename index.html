@@ -32,6 +32,37 @@
         </section>
 
         <section>
+          <h2>Overview</h2>
+
+          <div class="sub-header">This lesson will cover the following topics.</div>
+
+          <ul>
+            <li>Course Objectives</li>
+            <li>Introduction to Digital Citizenship</li>
+            <li>Purpose of HTML</li>
+            <li>How to write HTML and commonly used tags</li>
+            <li>Purpose of CSS</li>
+            <li>How to use CSS to style HTML</li>
+            <li>Exercises</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Course Objectives</h2>
+
+          <ul>
+            <li>Understand ethical digital citizenship</li>
+            <li>Become a digital creator</li>
+            <li>Develop a foundation for learning more about web development and programming in general</li>
+            <li>Create a website to showcase personal interests or use as a portfolio</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Digital Citizenship</h2>
+        </section>
+
+        <section>
           <h2>What is HTML?</h2>
 
           <div class="sub-header">Hypertext Markup Language</div>
@@ -45,7 +76,7 @@
           <section data-markdown>
             <script type="text/template">
               ## Tags
-              ```
+              ```html
               <tag attribute="value"></tag>
               ```
               This is the general form of a tag.
@@ -67,7 +98,7 @@
             <script type="text/template">
               ## Tags with Content
               Many tags accept content in between the opening and closing of the tag.
-              ```
+              ```html
               <div>Content</div>
               ```
 
@@ -82,7 +113,7 @@
             <script type="text/template">
               ## Nested Tags
               Tags may also be Nested, meaning that they are contained within the opening and closing of another tag.
-              ```
+              ```html
               <ul>
                 <li>List Item 1</li>
                 <li>List Item 2</li>
@@ -97,7 +128,7 @@
           <section data-markdown>
             <script type="text/template">
               ## Structure of an HTML Page
-              ```
+              ```html
               <!DOCTYPE html>
               <html>
                 <head>
@@ -116,7 +147,7 @@
           <section data-markdown>
             <script type="text/template">
               ### Document Type Declaration
-              ```
+              ```html
               <!DOCTYPE html>
               ```
               Tells the browser to process the document in the latest HTML mode (currently HTML5)
@@ -126,7 +157,7 @@
           <section data-markdown>
             <script type="text/template">
               ### HTML Tag
-              ```
+              ```html
               <html>
 
               </html>
@@ -138,7 +169,7 @@
           <section data-markdown>
             <script type="text/template">
               ### Head Tag
-              ```
+              ```html
               <head>
                 <title>Hello World</title>
                 <meta charset="UTF-8">
@@ -152,7 +183,7 @@
           <section data-markdown style="text-align: center;">
             <script type="text/template">
               ### Body Tag
-              ```
+              ```html
               <body>
                 <p>Hello World!</p>
                 <p>This will be displayed in the browser window</p>
@@ -163,6 +194,13 @@
               In the example above, two paragraphs with the text content will be rendered.
             </script>
           </section>
+        </section>
+
+        <section>
+          <h2>CodePen</h2>
+          <p>We will use <em>CodePen</em> as a tool for learning to write HTML. CodePen is a browser-based app that renders the HTML as we write it.</p>
+          <p>If you haven't already, create a CodePen account and get started!</p>
+          <a href="https://codepen.io/">https://codepen.io/</a>
         </section>
 
         <section>
@@ -207,7 +245,7 @@
           <section data-markdown>
             <script type="text/template">
               ### Div
-              ```
+              ```html
               <div>First</div>
               <div>Second</div>
               ```
@@ -232,7 +270,7 @@
           <section data-markdown>
             <script type="text/template">
               ### Span
-              ```
+              ```html
               <p>
                 The <span style="color: green;">color</span> changed.
               </p>
@@ -255,7 +293,7 @@
           <section data-markdown>
             <script type="text/template">
               ### Paragraph
-              ```
+              ```html
               <p>This is a paragraph.</p>
               <p>It is followed by another paragraph.</p>
               ```
@@ -276,7 +314,7 @@
           <section data-markdown>
             <script type="text/template">
               ### Ordered List
-              ```
+              ```html
               <ol>
                 <li>First List Item</li>
                 <li>Second List Item</li>
@@ -301,7 +339,7 @@
           <section data-markdown>
             <script type="text/template">
               ### Unordered List
-              ```
+              ```html
               <ul>
                 <li>First List Item</li>
                 <li>Second List Item</li>
@@ -366,40 +404,235 @@
               </ul>
             </script>
           </section>
-
-        </section>
-
-        <section>
-          <h2>CodePen</h2>
-          <p>We will use <em>CodePen</em> as a tool for learning to write HTML. CodePen is a browser-based app that renders the HTML as we write it.</p>
-          <p>Let's create our CodePen accounts and get started!</p>
-          <a href="https://codepen.io/">https://codepen.io/</a>
         </section>
 
         <section>
           <section data-markdown>
             <script type="text/template">
-              ## HTML Layout
+              ## Introduction to CSS
+              ### Cascading Style Sheets
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS
+
+              CSS is a language for describing the style (appearance) of HTML.
+
+              CSS is used to determine how elements are arranged, what colors are displayed, and what fonts are used.
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Syntax
+              ```css
+              h2 {
+                color: red;
+                background-color: white;
+                text-align: right;
+                border: 2px solid yellow;
+              }
               ```
+              ```html
+                <h2>Styled Header</h2>
+              ```
+              <h2 style="color: red;background-color: white; text-align: right; border: 2px solid yellow;">Styled Header</h2>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Syntax
+              ```css
+              h1 {
+                color: red;
+                background-color: white;
+                text-align: right;
+                border: 2px solid yellow;
+              }
+              ```
+
+              <ul>
+                <li class="info smaller-text">
+                  Each declaration contains a selector <em>h1</em> and one or more declarations surrounded by <em>{}</em>
+                </li>
+
+                <li class="info smaller-text">
+                  A declaration contains a property and a value separated by a colon <em>:</em> and ends with a semi-colon <em>;</em>
+                </li>
+
+                <li class="info smaller-text">
+                  <em>color</em> is a property and red is its <em>value</em>
+                </li>
+              </ul>
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Selectors
+
+              <p class="info">
+                In addition to applying CSS to all elements of a type like h1 and div, it's possible to make more fine-grained selections using the class or id attribute.
+              </p>
+
+              ```css
+              .red-text {
+                color: red;
+              }
+              ```
+
+              ```html
+              <p class="red-text">This text is red</p>
+              <div class="red-text">This text is also red</div>
+              ```
+              <p class="info">
+                The class selector is represented by a dot (period) and will apply to any HTML element that has the class defined in <em>class=""</em>
+              </p>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Selectors
+
+              ```css
+              p.red-text {
+                color: red;
+              }
+              ```
+
+              ```html
+              <p class="red-text">This text is red</p>
+              <div class="red-text">This text will not be styled</div>
+              ```
+              <p class="info">
+                There are additional ways to filter a selection. The syntax <em>element.class-name</em> denotes that only <em>p</em> elements with the <em>red-text</em> class will be styled.
+              </p>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Selectors
+
+              ```css
+              #first-paragraph {
+                color: red;
+              }
+              ```
+
+              ```html
+              <p id="first-paragraph">This text is red</p>
+              <div class="red-text">This text will not be styled</div>
+              ```
+              <p class="info">
+                The hash <em>#</em> character can also be used to select an element by its <em>id</em>. The id attribute is used to uniquely identify an element in a page.
+              </p>
+
+              <p class="info">
+                By convention, you should favor styling by classes instead of ids.
+              </p>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Grouping CSS Selectors
+
+              ```css
+              p.red-text, div.red-text {
+                color: red;
+              }
+              ```
+
+              ```html
+              <p class="red-text">This text is red</p>
+              <div class="red-text">This text is also red</div>
+              ```
+              <p class="info">
+                Multiple selectors can be grouped to apply the same style definitions by separating each selector with a comma.
+              </p>
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## CSS References
+
+              There are many more selectors and properties to explore. Use these references to learn more.
+
+              http://cssreference.io/
+
+              https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+              https://www.w3schools.com/cssref/
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Commenting out HTML
+
+              <p class="info smaller-text">There are cases when you need to disable lines of HTML without deleting it completely, you can use the comment syntax to remove the lines.</p>
+
+              <p class="info smaller-text">In most editors, the keyboard shortcut for commenting out a line is <em>CTRL + /</em> on a PC or <em>CMD + /</em> on a Mac. This adds the comments:<p>
+
+              ```html
+                <!--  -->
+
+                <p>This will display</p>
+                <!-- <p>This is commented out</p> -->
               ```
             </script>
           </section>
 
           <section data-markdown>
             <script type="text/template">
-              ## HTML Layout Continued
+              ### Commenting out CSS
+
+              <p class="info smaller-text">CSS comments are similar to HTML comments.</p>
+
+              ```css
+                /* */ for a block
+                // for a line
+
+                /* .red-text {
+                  color: red;
+                } */
+
+                .red-text {
+                  // color: red;
+                  text-align: center;
+                }
               ```
-              ```
-              In the example above, two paragraphs with the text content will be rendered.
+
+              <p class="info smaller-text">In the example above, any declarations in between /* */ are disabled.</p>
+
+              <p class="info smaller-text">It is also possible to comment out a single line using //</p>
             </script>
           </section>
 
           <section data-markdown>
             <script type="text/template">
-              ## HTML Layout Continued
+              ### Using Comments to Provide Information
+
+              <p class="info smaller-text">Sometimes comments are added before sections or to the end of lines to provide additional information to the person reading the code without disabling the code.</p>
+
+              ```css
+                // This makes the text red
+                .red-text {
+                  color: red; // red can be replaced with another color
+                }
               ```
-              ```
-              In the example above, two paragraphs with the text content will be rendered.
             </script>
           </section>
         </section>
