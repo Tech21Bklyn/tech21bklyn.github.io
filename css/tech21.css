@@ -9,3 +9,7 @@ em {
 .info {
   text-align: left;
 }
+
+li.smaller-text {
+  font-size: 0.75em;
+}

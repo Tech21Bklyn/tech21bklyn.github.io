@@ -149,7 +149,7 @@
             </script>
           </section>
 
-          <section data-markdown>
+          <section data-markdown style="text-align: center;">
             <script type="text/template">
               ### Body Tag
               ```
@@ -166,13 +166,6 @@
         </section>
 
         <section>
-          <h2>CodePen</h2>
-          <p>We will use <em>CodePen</em> as a tool for learning to write HTML. CodePen is a browser-based app that renders the HTML as we write it.</p>
-          <p>Let's create our CodePen accounts and get started!</p>
-          <a href="https://codepen.io/">https://codepen.io/</a>
-        </section>
-
-        <section>
           <section data-markdown>
             <script type="text/template">
               ### Commonly Used HTML Elements
@@ -182,18 +175,18 @@
               <span>
               <p>
               <ol>
-                <li>
               <ul>
-                <li>
+              <li>
               <a>
               <img>
               ```
+              This section provides usage examples of common HTML elements.  For a comprehensive list, see https://www.w3schools.com/tags/
             </script>
           </section>
 
           <section data-markdown>
             <script type="text/template">
-              ### Commonly Used HTML Elements
+              ### Header
               ```
               <h1>Header 1</h1>
               ```
@@ -213,31 +206,174 @@
 
           <section data-markdown>
             <script type="text/template">
-              ### Commonly Used HTML Elements
+              ### Div
               ```
               <div>First</div>
               <div>Second</div>
               ```
               <div>First</div>
               <div>Second</div>
+
+              <ul class="bulleted">
+                <li class="fragment fade-up info smaller-text">
+                  The div element is depicted as a block in the HTML document. It is often used to group sections of the page along with CSS (Cascading Style Sheets) to create a page's layout (such as columns and rows).
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  You can also use it to apply styles (formatting) to a block of elements.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  Divs don't have any special meaning (semantics). When possible, use a semantic element that describes the contents better than a div when possible (such as <em>nav</em> or <em>footer</em>), but don't get hung up on it.
+                </li>
+              </ul>
+
             </script>
           </section>
 
           <section data-markdown>
             <script type="text/template">
-              ### Commonly Used HTML Elements
+              ### Span
               ```
-              <div>
-                <span>First Span</span>
-                <span>Second Span</span>
-              </div>
+              <p>
+                The <span style="color: green;">color</span> changed.
+              </p>
               ```
-              <div>
-                <span>First Span</span>
-                <span>Second Span</span>
-              </div>
+              <p>
+                The <span style="color: green;">color</span> changed.
+              </p>
+
+              <ul class="bulleted">
+                <li class="fragment fade-up info smaller-text">
+                  Spans are used to group elements inline and apply styles to them.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  This differs from a div which is used to style a block.
+                </li>
+              </ul>
             </script>
           </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Paragraph
+              ```
+              <p>This is a paragraph.</p>
+              <p>It is followed by another paragraph.</p>
+              ```
+              <p>This is a paragraph.</p>
+              <p>It is followed by another paragraph.</p>
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  Paragraphs represent a block of text.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  They are functionally similar to a div, but have a different semantic meaning.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Ordered List
+              ```
+              <ol>
+                <li>First List Item</li>
+                <li>Second List Item</li>
+              </ol>
+              ```
+              <ol>
+                <li>First List Item</li>
+                <li>Second List Item</li>
+              </ol>
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  <em>`<ol>`</em> stands for ordered list, as in a numerical ordering.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  Each element in the list is represented with the `<li>` tag.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Unordered List
+              ```
+              <ul>
+                <li>First List Item</li>
+                <li>Second List Item</li>
+              </ul>
+              ```
+              <ul>
+                <li>First List Item</li>
+                <li>Second List Item</li>
+              </ul>
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  <em>`<ul>`</em> stands for unordered list, which contains items that are not numerically ordered.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  Each element in the list is represented with the <em>`<li>`</em> tag.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Anchor
+              ```
+              <a href="https://www.google.com">Google Link</a>
+              ```
+              <a href="https://www.google.com">Google Link</a>
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  The anchor tag is used to create a hyperlink. The hyperlink is defined in the <em>href</em> attribute and links to the given value.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  The elements in the Content section (between the opening and closing tags) render as a clickable hyperlink.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Image
+              ```
+              <img src="https://www.w3schools.com/html/html5.gif">
+              ```
+              <img src="https://www.w3schools.com/html/html5.gif">
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  The <em>img</em> element is used to render an image.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  The URL or path to the image is specified in the <em>src</em> attribute.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  Since the tag does not have any content, it does not require a closing tag.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  There are many other attributes that control things such as the size of the image. Learn more at https://www.w3schools.com/html/html_images.asp
+                </li>
+              </ul>
+            </script>
+          </section>
+
+        </section>
+
+        <section>
+          <h2>CodePen</h2>
+          <p>We will use <em>CodePen</em> as a tool for learning to write HTML. CodePen is a browser-based app that renders the HTML as we write it.</p>
+          <p>Let's create our CodePen accounts and get started!</p>
+          <a href="https://codepen.io/">https://codepen.io/</a>
         </section>
 
         <section>
