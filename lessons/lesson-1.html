@@ -1,0 +1,726 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Tech 21 @ BPL Lesson 1 - Introduction to HTML</title>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/black.css">
+    <link rel="stylesheet" href="../css/tech21.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-background-image="../img/Clarendon-white.png"
+          data-background-size="500px"
+          data-background-position="bottom 20px left 20px"
+        >
+          <h1>Tech 21 @ BPL</h1>
+          <h3 style="color: #ffbb33">Lesson 1</h3>
+          <h2>Introduction to HTML</h2>
+        </section>
+
+        <section>
+          <h2>Overview</h2>
+
+          <div class="sub-header">This lesson will cover the following topics.</div>
+
+          <ul>
+            <li>Course Objectives</li>
+            <li>Introduction to Digital Citizenship</li>
+            <li>Purpose of HTML</li>
+            <li>How to write HTML and commonly used tags</li>
+            <li>Purpose of CSS</li>
+            <li>How to use CSS to style HTML</li>
+            <li>Assignment</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Course Objectives</h2>
+
+          <ul>
+            <li>Understand ethical digital citizenship</li>
+            <li>Become a digital creator</li>
+            <li>Develop a foundation for learning more about web development and programming in general</li>
+            <li>Create a website to showcase personal interests or use as a portfolio</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>Digital Citizenship</h2>
+
+            <div class="sub-header">Introduction and this week's topics</div>
+            <ul>
+              <li>Digital Access</li>
+              <li>Digital Communication</li>
+            </ul>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Digital Citizenship
+              ### Additional Reading
+
+              <div class="info "smaller-text"">
+                <p>http://www.digitalcitizenship.net/Nine_Elements.html</p>
+
+                <p>http://www.internetsociety.org/your-digital-footprint</p>
+
+                <p>https://www.stopbullying.gov/cyberbullying/what-is-it/</p>
+              </div>
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <h2>What is HTML?</h2>
+
+          <div class="sub-header">Hypertext Markup Language</div>
+
+          <p class="fragment fade-up info">Standardized system that tells the browser how to <em>render</em> (display) information by using tags and attributes as instructions.</p>
+
+          <p class="fragment fade-up info">Browsers transform tags into HTML <em>elements</em> that are contained in the Document Object Model, which is commonly referred to as the <em>DOM</em>.</p>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Tags
+              ```html
+              <tag attribute="value"></tag>
+              ```
+              This is the general form of a tag.
+
+              Attributes and values are optional.
+
+              Examples of commonly used tags include:
+
+              ```
+              <div>Division</div>
+              <p>Paragraph</p>
+              <ol>Ordered List</ol>
+              <ul>Unordered List</ul>
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Tags with Content
+              Many tags accept content in between the opening and closing of the tag.
+              ```html
+              <div>Content</div>
+              ```
+
+              Some tags do not accept content and can be closed in the opening tag. The Line Break tag is an example:
+              ```
+              <br />
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Nested Tags
+              Tags may also be Nested, meaning that they are contained within the opening and closing of another tag.
+              ```html
+              <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+              </ul>
+              ```
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Structure of an HTML Page
+              ```html
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>Hello World</title>
+                </head>
+                <body>
+                  <p>Hello World!</p>
+                  <p>This will be displayed in the browser window</p>
+                </body>
+              </html>
+              ```
+              Note how the tags are nested.
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Document Type Declaration
+              ```html
+              <!DOCTYPE html>
+              ```
+              Tells the browser to process the document in the latest HTML mode (currently HTML5)
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### HTML Tag
+              ```html
+              <html>
+
+              </html>
+              ```
+              The container for all other HTML elements.
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Head Tag
+              ```html
+              <head>
+                <title>Hello World</title>
+                <meta charset="UTF-8">
+                <meta name="description" content="HTML example">
+              </head>
+              ```
+              Container for the head elements, which includes information about the page such as the title and metadata used by machines to gather information about the page (like search engines).
+            </script>
+          </section>
+
+          <section data-markdown style="text-align: center;">
+            <script type="text/template">
+              ### Body Tag
+              ```html
+              <body>
+                <p>Hello World!</p>
+                <p>This will be displayed in the browser window</p>
+              </body>
+              ```
+              Container for the main body of the document. This is where you put the elements you want displayed in the browser window.
+
+              In the example above, two paragraphs with the text content will be rendered.
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <h2>CodePen</h2>
+          <p>We will use <em>CodePen</em> as a tool for learning to write HTML. CodePen is a browser-based app that renders the HTML as we write it.</p>
+          <p>If you haven't already, create a CodePen account and get started!</p>
+          <a href="https://codepen.io/">https://codepen.io/</a>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Commonly Used HTML Elements
+              ```
+              <h1> <h2> through <h6>
+              <div>
+              <span>
+              <p>
+              <ol>
+              <ul>
+              <li>
+              <a>
+              <img>
+              ```
+              This section provides usage examples of common HTML elements.  For a comprehensive list, see https://www.w3schools.com/tags/
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Header
+              ```
+              <h1>Header 1</h1>
+              ```
+              <h1>Header 1</h1>
+
+              ```
+              <h2>Header 2</h2>
+              ```
+              <h2>Header 2</h2>
+
+              ```
+              <h3>Header 3</h3>
+              ```
+              <h3>Header 3</h3>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Div
+              ```html
+              <div>First</div>
+              <div>Second</div>
+              ```
+              <div>First</div>
+              <div>Second</div>
+
+              <ul class="bulleted smaller-text">
+                <li class="fragment fade-up info">
+                  The div is a block type element. It is often used to group sections and is combined with CSS (Cascading Style Sheets) to create a page's layout (such as columns and rows).
+                </li>
+                <li class="fragment fade-up info">
+                  You can also use it to apply styles (formatting) to a block of elements.
+                </li>
+                <li class="fragment fade-up info">
+                  Divs don't have special meaning (semantics). If possible, use a <em>semantic</em> element that describes the contents better (such as <em>nav</em> or <em>footer</em>), but don't overthink it.
+                </li>
+              </ul>
+
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Span
+              ```html
+              <p>
+                The <span style="color: green;">color</span> changed.
+              </p>
+              ```
+              <p>
+                The <span style="color: green;">color</span> changed.
+              </p>
+
+              <ul class="bulleted">
+                <li class="fragment fade-up info smaller-text">
+                  Spans are used to group elements inline and apply styles to them.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  This differs from a div which is used to style a block.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Paragraph
+              ```html
+              <p>This is a paragraph.</p>
+              <p>It is followed by another paragraph.</p>
+              ```
+              <p>This is a paragraph.</p>
+              <p>It is followed by another paragraph.</p>
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  Paragraphs represent a block of text.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  They are functionally similar to a div, but have a different semantic meaning.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Ordered List
+              ```html
+              <ol>
+                <li>First List Item</li>
+                <li>Second List Item</li>
+              </ol>
+              ```
+              <ol>
+                <li>First List Item</li>
+                <li>Second List Item</li>
+              </ol>
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  <em>`<ol>`</em> stands for ordered list, as in a numerical ordering.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  Each element in the list is represented with the <em>`<li>`</em> tag.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Unordered List
+              ```html
+              <ul>
+                <li>First List Item</li>
+                <li>Second List Item</li>
+              </ul>
+              ```
+              <ul>
+                <li>First List Item</li>
+                <li>Second List Item</li>
+              </ul>
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  <em>`<ul>`</em> stands for unordered list, which contains items that are not numerically ordered.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  Each element in the list is represented with the <em>`<li>`</em> tag.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Anchor
+              ```
+              <a href="https://www.google.com">Google Link</a>
+              ```
+              <a href="https://www.google.com">Google Link</a>
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  The anchor tag is used to create a hyperlink. The hyperlink is defined in the <em>href</em> attribute and links to the given value.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  The elements in the Content section (between the opening and closing tags) render as a clickable hyperlink.
+                </li>
+              </ul>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Image
+              ```
+              <img src="https://www.w3schools.com/html/html5.gif">
+              ```
+              <img src="https://www.w3schools.com/html/html5.gif">
+
+              <ul>
+                <li class="fragment fade-up info smaller-text">
+                  The <em>img</em> element is used to render an image.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  The URL or path to the image is specified in the <em>src</em> attribute.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  Since the tag does not have any content, it does not require a closing tag.
+                </li>
+                <li class="fragment fade-up info smaller-text">
+                  There are many other attributes that control things such as the size of the image. Learn more at https://www.w3schools.com/html/html_images.asp
+                </li>
+              </ul>
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Introduction to CSS
+              ### Cascading Style Sheets
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS
+
+              CSS is a language for describing the style (appearance) of HTML.
+
+              CSS is used to determine how elements are arranged, what colors are displayed, and what fonts are used.
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Syntax
+              ```css
+              h2 {
+                color: red;
+                background-color: white;
+                text-align: right;
+                border: 2px solid yellow;
+              }
+              ```
+              ```html
+                <h2>Styled Header</h2>
+              ```
+              <h2 style="color: red;background-color: white; text-align: right; border: 2px solid yellow;">Styled Header</h2>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Syntax
+              ```css
+              h1 {
+                color: red;
+                background-color: white;
+                text-align: right;
+                border: 2px solid yellow;
+              }
+              ```
+
+              <ul>
+                <li class="info smaller-text">
+                  Each declaration contains a selector <em>h1</em> and one or more declarations surrounded by <em>{}</em>
+                </li>
+
+                <li class="info smaller-text">
+                  A declaration contains a property and a value separated by a colon <em>:</em> and ends with a semi-colon <em>;</em>
+                </li>
+
+                <li class="info smaller-text">
+                  <em>color</em> is a property and red is its <em>value</em>
+                </li>
+              </ul>
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Selectors
+
+              <p class="info">
+                In addition to applying CSS to all elements of a type like h1 and div, it's possible to make more specific selections using <em>class</em> or <em>id</em> attributes.
+              </p>
+
+              ```css
+              .red-text {
+                color: red;
+              }
+              ```
+
+              ```html
+              <p class="red-text">This text is red</p>
+              <div class="red-text">This text is also red</div>
+              ```
+              <p class="info">
+                The class selector is represented by a dot (period) and applies styles to any element with the class defined in <em>class=""</em>
+              </p>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Selectors
+
+              ```css
+              p.red-text {
+                color: red;
+              }
+              ```
+
+              ```html
+              <p class="red-text">This text is red</p>
+              <div class="red-text">This text will not be styled</div>
+              ```
+              <p class="info">
+                There are additional ways to filter a selection. The syntax <em>element.class-name</em> denotes that only <em>p</em> elements with the <em>red-text</em> class will be styled.
+              </p>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### CSS Selectors
+
+              ```css
+              #first-paragraph {
+                color: red;
+              }
+              ```
+
+              ```html
+              <p id="first-paragraph">This text is red</p>
+              <div class="red-text">This text will not be styled</div>
+              ```
+              <p class="info">
+                The hash <em>#</em> character can also be used to select an element by its <em>id</em>. The id attribute is used to uniquely identify an element in a page.
+              </p>
+
+              <p class="info">
+                By convention, you should favor styling by classes instead of ids.
+              </p>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Grouping CSS Selectors
+
+              ```css
+              p.red-text, div.red-text {
+                color: red;
+              }
+              ```
+
+              ```html
+              <p class="red-text">This text is red</p>
+              <div class="red-text">This text is also red</div>
+              ```
+              <p class="info">
+                Multiple selectors can be grouped to apply the same style definitions by separating each selector with a comma.
+              </p>
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## CSS References
+
+              There are many more selectors and properties to explore. Use these references to learn more.
+
+              http://cssreference.io/
+
+              https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+              https://www.w3schools.com/cssref/
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Commenting out HTML
+
+              <p class="info smaller-text">There are cases when you need to disable lines of HTML without deleting it completely, you can use the comment syntax to remove the lines.</p>
+
+              <p class="info smaller-text">In most editors, the keyboard shortcut for commenting out a line is <em>CTRL + /</em> on a PC or <em>CMD + /</em> on a Mac. This adds the comments:<p>
+
+              ```html
+                <!--  -->
+
+                <p>This will display</p>
+                <!-- <p>This is commented out</p> -->
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Commenting out CSS
+
+              <p class="info smaller-text">CSS comments are similar to HTML comments.</p>
+
+              ```css
+                /* */ for a block
+                // for a line
+
+                /* .red-text {
+                  color: red;
+                } */
+
+                .red-text {
+                  // color: red;
+                  text-align: center;
+                }
+              ```
+
+              <p class="info smaller-text">In the example above, any declarations in between /* */ are disabled.</p>
+
+              <p class="info smaller-text">It is also possible to comment out a single line using //</p>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Using Comments to Provide Information
+
+              <p class="info smaller-text">Sometimes comments are added before sections or to the end of lines to provide additional information to the person reading the code without disabling the code.</p>
+
+              ```css
+                // This makes the text red
+                .red-text {
+                  color: red; // red can be replaced with another color
+                }
+              ```
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <h3>Review Questions</h3>
+
+          <ul>
+            <li class="fragment fade-up">
+              How can you apply CSS styling to all elements?
+            </li>
+            <li class="fragment fade-up">
+              How can you change the font used?
+            </li>
+            <li class="fragment fade-up">
+              What is the purpose of a div?
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What to look forward to in next week's lesson</h2>
+
+          <p class="info">
+            We will learn how to improve the appearance and layout of a website using CSS.
+          </p>
+        </section>
+
+        <section>
+          <h2>Assignment</h2>
+
+          <p class="info smaller-text">Construct the first page of your future website using CodePen. Begin with a preliminary idea (you may decide to change it later). Let's start structuring content.</p>
+
+          <p class="sub-header info">Your page should contain:</p>
+          <ul class="smaller-text">
+            <li>A title</li>
+            <li>An introduction section</li>
+            <li>One or more paragraphs containing information about your topic</li>
+            <li>Links to other relevant websites</li>
+            <li>Display images and other media relevant to your site</li>
+            <li>Classes styled with CSS</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+        { src: '../plugin/markdown/marked.js' },
+          { src: '../plugin/markdown/markdown.js' },
+          { src: '../plugin/notes/notes.js', async: true },
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

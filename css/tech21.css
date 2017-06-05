@@ -25,3 +25,17 @@ ul.smaller-text {
 .backgrounds {
   opacity: 0.3;
 }
+
+div.main-menu {
+  padding-left: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+}
+
+ul.no-bullets > li {
+  margin-bottom: 20px;
+}
