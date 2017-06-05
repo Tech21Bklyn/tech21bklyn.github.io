@@ -10,10 +10,18 @@ em {
   text-align: left;
 }
 
+div.smaller-text {
+  font-size: 0.75em;
+}
+
 p.smaller-text {
   font-size: 0.75em;
 }
 
 ul.smaller-text {
   font-size: 0.75em;
+}
+
+.backgrounds {
+  opacity: 0.3;
 }
