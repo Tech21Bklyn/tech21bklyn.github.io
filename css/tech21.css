@@ -3,7 +3,7 @@
 }
 
 em {
-  color: #42affa;
+  color: #ffbb33;
 }
 
 .info {
@@ -38,4 +38,10 @@ ul.no-bullets {
 
 ul.no-bullets > li {
   margin-bottom: 20px;
+}
+
+.example-container {
+  text-align: left;
+  border: 2px solid white !important;
+  padding: 4px !important;
 }
