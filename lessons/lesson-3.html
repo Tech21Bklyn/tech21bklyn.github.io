@@ -1,0 +1,606 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Tech 21 @ BPL Lesson 3 - Website Purpose and Design</title>
+
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/black.css">
+  <link rel="stylesheet" href="../css/tech21.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section
+        data-background-image="../img/Clarendon-white.png"
+        data-background-size="500px"
+        data-background-position="bottom 20px left 20px"
+    >
+      <h1>Tech 21 @ BPL</h1>
+      <h3 style="color: #ffbb33">Lesson 3</h3>
+      <h2>Website Purpose and Design</h2>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+
+      <div class="sub-header">This lesson will cover the following topics.</div>
+
+      <div class="info smaller-text">
+        <ul>
+          <li>Types of Websites</li>
+          <li>Website Design Best Practices
+            <ul class="dashed">
+              <li>Choosing Color Palettes</li>
+              <li>Finding and Using Fonts</li>
+              <li>Graphics, Images, and Video</li>
+              <li>Call to Action</li>
+              <li>Headers and Footers</li>
+            </ul>
+          </li>
+          <li>User Experience (UX) and User Interface (UI) Design Roles</li>
+          <li>Copyright, Trademarks, Patents, Licenses, and the DMCA</li>
+          <li>Introduction to the Atom Text Editor</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h3>Types of Websites</h3>
+
+        <div class="info">
+          <p>People and organizations use websites for a variety of reasons. The following are examples of sites you may be interested in creating as a student.</p>
+          <ul class="smaller-text">
+            <li>Personal website or blog</li>
+            <li>Portfolio or gallery of work</li>
+            <li>Business or Non-profit site</li>
+            <li>E-commerce</li>
+            <li>Community site</li>
+            <li>Advocacy site</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Personal website or blog</h3>
+
+        <div class="info smaller-text">
+          <p>These sites are typically based an individual's personal interests.</p>
+          <p>Blog posts are made of a fairly regular basis to provide new content or updates on the topics that the creator wants to share information about or demonstrate expertise in.</p>
+          <p>A vlog is a type of blog that uses video content instead of writing.</p>
+          <p>Examples of platforms that are used for Blogging/Vlogging:</p>
+          <ul>
+            <li>WordPress</li>
+            <li>Blogger</li>
+            <li>Tumblr</li>
+            <li>YouTube</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Portfolio or Gallery of Work</h3>
+
+        <div class="info smaller-text">
+          <p>A personal portfolio or gallery can be used to showcase your abilities to potential clients or to apply to schools, scholarship programs, internships, and jobs.</p>
+          <p>Galleries with work samples help people assess the creator's style and capabilities and differentiate him or her from others.</p>
+          <p>A resume is sometimes included, especially if the portfolio is designed to be viewed as part of an application process.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Business or Non-Profit site</h3>
+
+        <div class="info smaller-text">
+          <p>Websites attract potential customers, volunteers, or donors. They tell the story behind organizations and the services they offer.</p>
+          <p>Additionally, business information is listed in directories such as Google, FourSquare, and Yelp to aid discovery by customers.</p>
+          <p>There are many ways to create and host websites including:</p>
+          <ul>
+            <li>Custom website development, with or without a framework</li>
+            <li>Website builders/Content Management Systems (WordPress, SquareSpace, Wix)</li>
+            <li>Facebook Page for the business/non-profit organization or other social media pages.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>E-commerce</h3>
+
+        <div class="info smaller-text">
+          <p>E-commerce sites often serve as platforms or digital storefronts to connect a person or business with customers. Customers are able to purchase goods and/or services on the site and pay using a payment provider such as PayPal or Square.</p>
+          <p>Examples of E-commerce platforms include:</p>
+          <ul>
+            <li>Etsy</li>
+            <li>Shopify</li>
+            <li>Amazon Store Front</li>
+            <li>eBay</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Community Site</h3>
+
+        <div class="info smaller-text">
+          <p>Sites built around the theme of a particular community or fandom bring people with a shared interest together. These sites enable them share the latest news and discuss relevant issues.</p>
+          <p>These sites may contain features that allow users to upload their own content to galleries or post to forums</p>
+          <p>Examples:</p>
+          <ul>
+            <li><a href="https://www.reddit.com/r/webdev/">Reddit /r/WEBDEV</a></li>
+            <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+            <li><a href="https://soundcloud.com/">SoundCloud</a></li>
+            <li><a href="https://cartrdge.com/">Cartrdge</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Advocacy Site</h3>
+
+        <div class="info smaller-text">
+          <p>These sites exist to create awareness for a cause and/or influence political or social change.</p>
+          <p>These sites may be operated by non-profit or for-profit organizations. Sometimes, they are operated by multiple organizations that have partnered together to promote a cause.</p>
+          <ul>
+            <li><a href="https://www.kiva.org/">Kiva</a></li>
+            <li><a href="https://www.change.org/">Change.org</a></li>
+            <li><a href="https://mapscorps.org/">MAPSCorps</a></li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <h2>Website Design Best Practices</h2>
+
+      <p class="info">
+        This section includes descriptions of design principles and best practices for making websites more attractive and useful to users.
+      </p>
+    </section>
+
+    <section>
+      <h3>Space</h3>
+
+      <div class="info">
+        <ul>
+          <li>Spacing between elements that draws the viewer's eyes to the most important parts of the page.</li>
+          <li>Consistency in spacing around elements and text.</li>
+          <li>Example: Google's search page vs. <a href="https://www.webpagefx.com/blog/web-design/popular-search-engines-in-the-90s-then-and-now/">other search engines</a> in the early days.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>Navigation</h3>
+
+      <div class="info">
+        <ul>
+          <li>Easy to find and clean navigation menu</li>
+          <li>Indicators should let user clearly know what part of the site they are on (breadcrumbs are one technique)</li>
+          <li>No dead ends. Provide ways to navigate back or to other parts of the site</li>
+        </ul>
+
+        <p>Let's examine <a href="https://www.amazon.com">Amazon.com</a> to see some of these principles in action.</p>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h3>Color</h3>
+
+        <div class="info">
+          <p>Color selection is a complicated topic. Color has scientific and cultural components.</p>
+          <p>Select a primary color and complementary colors that convey your site's message effectively to the target audience. The following tools can help you choose colors:</p>
+          <ul class="smaller-text">
+            <li><a href="https://color.adobe.com/">Adobe Color CC</a></li>
+            <li><a href="https://material.io/color/#!/">Material Design Color Tool</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Color - Additional Reading</h3>
+
+        <ul class="info">
+          <li><a href="https://blog.kissmetrics.com/color-psychology/?wide=1">Color Psychology Infographic from Kissmetrics</a></li>
+          <li><a href="https://www.shutterstock.com/blog/color-symbolism-and-meanings-around-the-world">Shutterstock - Symbolism of Colors and Color Meanings Around the World</a></li>
+          <li><a href="http://www.globalpropaganda.com/articles/TranslatingColours.pdf">Colors Across Cultures: Translating Colours in Interactive Marketing Communications (academic paper)</a></li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Font Selection</h3>
+
+        <div class="info smaller-text">
+          <p>Basic criteria for font selection:</p>
+          <ul>
+            <li>Readability</li>
+            <li>Matches the message that you want to convey</li>
+            <li>Appeals to your target audience</li>
+          </ul>
+
+          <p>Use font colors that are readable on the background (dark font on light background and vice versa)</p>
+        </div>
+
+        <div style="background: white; color:yellow;">Difficult to read</div>
+        <div style="background: black; color:yellow;">Easier to read</div>
+      </section>
+
+      <section>
+        <h3>Font Selection Continued</h3>
+
+        <div class="info">
+          <p>Use web fonts that are suitable for reading on screens rather than for print.</p>
+          <p>The following infographics and articles can help you learn more about choosing fonts.</p>
+
+          <ul class="smaller-text">
+            <li><a href="https://inspirationlab.files.wordpress.com/2010/04/infographiclarge_v2.png">How to choose a type face (humorous)</a></li>
+            <li><a href="https://www.pinterest.com/pin/485614772295575922">Font selection infographics (Pinterest)</a></li>
+            <li><a href="https://www.smashingmagazine.com/2010/12/what-font-should-i-use-five-principles-for-choosing-and-using-typefaces/">5 Principles for Choosing Typefaces</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Embedding Google Web Fonts
+
+
+          <div class="info smaller-text">
+            <p><a href="https://fonts.google.com/" target="_blank">Google Web Fonts</a> helps load fonts faster by downloading minimal font data and caching from site to site. Example:</p>
+          </div>
+
+          ```html
+          <head>
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+          </head>
+          ```
+
+          ```css
+          .css-selector {
+            font-family: 'Roboto', sans-serif;
+          }
+          ```
+
+          <div class="info smaller-text">
+            <p>In <a href="https://blog.codepen.io/2012/07/18/custom-fonts-in-pens/">CodePen</a>, add an @import statement to the top of the CSS pane.</p>
+          </div>
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Graphics, Images, and Video</h3>
+
+        <div class="info smaller-text">
+          <p>Visuals are an important part of any website. They draw the viewer's attention to important content and convey messages in ways that words can't.</p>
+          <p>Consider readability if you put text on top of the graphics. Make sure it's readable.</p>
+          <p>Be mindful about copyright laws and do not use works protected by copyright without permission. We will discuss this in more detail later in the presentation.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Graphics you can use (legally)</h3>
+
+        <div class="info">
+          <ul class="smaller-text">
+            <li>Create your own on <a href="https://www.canva.com/">Canva</a></li>
+            <li>Use images licensed under <a href="http://copyright.cornell.edu/resources/publicdomain.cfm">Public Domain</a>
+              or <a href="https://creativecommons.org/">Creative Commons</a> licenses or other free to use licenses. Read the license terms carefully since some may restrict usage to non-commercial use or require attribution statements.</li>
+            <li>Use <a href="https://images.google.com/">Google Images</a> search with Usage Rights filter.</li>
+            <li><a href="https://unsplash.com/">Unsplash</a></li>
+            <li><a href="https://www.flickr.com/creativecommons/">Flickr Creative Commons</a></li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <h3>Call to Action</h3>
+
+      <div class="info smaller-text">
+        <p>The Call to Action (CTA) encourages the site visitor to take the next step intended by the creator. It should be featured prominently on the site to encourage the behavior. CTAs may be a form or button that encourages the user to do things such as:</p>
+
+        <ul>
+          <li>Register or subscribe to a newsletter</li>
+          <li>Donate money to a cause</li>
+          <li>Sign up for an account to access services and features</li>
+          <li>Sign up for a free trial</li>
+          <li>Shop for merchandise and place an order</li>
+          <li>Contact someone at the organization to learn more</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>Headers and Footers</h3>
+
+      <div class="info">
+        <ul>
+          <li>Headers help the visitor know what site he or she is on and what the current page is. Headers are a good place to put navigation elements.</li>
+          <li>Footers contain information navigation elements and other information that can help the user regardless of which page he or she lands on</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>UX and UI Design Roles</h2>
+
+      <p class="info">In this section, we will develop an understanding of the role of a User Experience designer and a User Interface designer.</p>
+      <p class="info">The role definitions in this section are not exhaustive and may differ depending on who you ask.</p>
+    </section>
+
+    <section>
+      <h3>What are Designers?</h3>
+
+      <div class="info">
+        <p>The role of the <em>Designer</em> exists in many forms and in many industries including technical products (websites, apps), print, and industrial (machines, furniture, etc.).</p>
+        <p>While designers distinguish themselves into different specialities, their roles may sometimes blur together, especially in smaller organizations where one person has to take on multiple roles.</p>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h3>User Experience (UX) Design</h3>
+
+        <div class="info smaller-text">
+          <ul>
+            <li>Concerned with the user's overall experience with the product</li>
+            <li>Model how users interact with and flow through the product (e.g. navigation between pages on a website or screens on an app)</li>
+            <li>Develop prototypes and interactive wireframes that the User Interface designers, graphics designers, and developers (programmers) will implement</li>
+          </ul>
+
+          <p>References</p>
+          <ul>
+            <li><a href="https://www.fastcodesign.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry">https://www.fastcodesign.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry</a></li>
+            <li><a href="https://ymedialabs.com/ux-vs-ui/">https://ymedialabs.com/ux-vs-ui/</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>UX: Understanding the Psychological Impacts of Web Design</h3>
+
+        <div class="info">
+          <p><a href="http://uxmovesme.com/">UX Moves Me</a> - by Eve J Weinberg (NYU ITP thesis)</p>
+          <p class="smaller-text">This graduate thesis project illustrates how a UX designer could leverage psychology when developing a website.</p>
+        </div>
+
+        <iframe src="https://player.vimeo.com/video/216584158" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </section>
+    </section>
+
+    <section>
+      <h3>User Interface (UI) Design</h3>
+
+      <div class="info smaller-text">
+        <ul>
+          <li>Designs the look and feel of the product interface</li>
+          <li>Adds the skin to the wireframes such as the type face, color palettes and details of individual interface components</li>
+          <li>Designs interactive elements and transitions</li>
+          <li>Some consider this an extension of the traditional Graphic Designer role</li>
+        </ul>
+
+        <p>References</p>
+        <ul>
+          <li><a href="http://www.creativebloq.com/web-design/pro-s-guide-ui-design-31619582">http://www.creativebloq.com/web-design/pro-s-guide-ui-design-31619582</a></li>
+          <li><a href="https://careerfoundry.com/en/blog/ui-design/how-to-become-a-ui-designer/">https://careerfoundry.com/en/blog/ui-design/how-to-become-a-ui-designer/</a></li>
+          <li><a href="https://www.behance.net/search?field=132&content=projects&sort=appreciations&time=week">UI and UX examples on Adobe Behance</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>Role of the Developer/Programmer in Design</h3>
+
+      <div class="info smaller-text">
+        <ul>
+          <li>While UX and UI designers may also use HTML, CSS, and JavaScript, the programmer will be responsible for implementing the design and connecting it to data sources</li>
+          <li>Front-End developer is the term for a programmer who specializes in this area</li>
+          <li>Also need to be familiar with design principles and understand the significance of design decisions</li>
+          <li>Concerned with performance trade-offs of design decisions (will a design actually be performant)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h2>Copyrights and Other Protections</h2>
+      </section>
+
+      <section>
+        <h3>What is Copyright?</h3>
+
+        <div class="info smaller-text">
+          <p><i>Copyright is a form of protection grounded in the U.S. Constitution and granted by law for original works of authorship fixed in a tangible medium of expression. Copyright covers both published and unpublished works.</i></p>
+          <p><a href="https://www.copyright.gov/help/faq/index.html">- Copyright.gov</a></p>
+        </div>
+      </section>
+
+      <section>
+        <h3>How does Copyright protection work?</h3>
+
+        <div class="info smaller-text">
+          <ul>
+            <li>It protects original works of authorship including literary, dramatic, musical, and artistic works, such as poetry, novels, movies, songs, computer software, and architecture -
+              <a href="https://www.copyright.gov/circs/circ01.pdf">Copyright Basics</a></li>
+            <li>Protection exists as soon as the work is created in a fixed copy for the first time (a material object such as paper, disc, or perceived on a machine or device)
+            <li>The work does not have to be published or registered, but registration with the US Copyright Office is required to take legal action</li>
+            <li>Copyright notice &copy; is not required as of March 1, 1989</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>What is a License?</h3>
+
+        <div class="info smaller-text">
+          <p>A license is an agreement between two parties that authorizes the use of some intellectual property that is protected by law.</p>
+          <p>Licenses may be for a term or perpetual (forever). An example is an End-User License Agreement (EULA) that you must accept when you install software or sign up to use a website.</p>
+          <p>Other examples include a license to publish photographs, videos, graphics, or music. You grant social media companies a license when you publish your photos on their apps based on the terms of their EULAs.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What are Trademarks?</h3>
+
+        <div class="info smaller-text">
+          <p>Trademarks protect some categories that are not covered by copyrights. They are designed to distinguish sources of goods, such as a logo printed on packaging or marketing material.</p>
+          <p>Trademarks also include service marks, which are words, phrases, symbols, or designs that distinguishes the source of a service.</p>
+          <p>Trademarks registered with the US Patent and Trademark Office use the &reg; symbol. Unregistered trademarks use the &trade; symbol.</p>
+
+          <p>Reference: <a href="https://www.uspto.gov/trademarks-getting-started/trademark-basics/trademark-patent-or-copyright">US Patent and Trademark Office</a></p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What are Patents?</h3>
+
+        <div class="info smaller-text">
+          <p>Patents protect inventions for a limited term.</p>
+          <p>The protection is granted in exchange for making the invention public knowledge.</p>
+          <p>The inventor or patent holder has the exclusive right to manufacture, use, or sell the invention until the expiration.</p>
+
+          <p>Reference: <a href="https://www.uspto.gov/patents-getting-started/general-information-concerning-patents">US Patent and Trademark Office</a></p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What is Fair Use?</h3>
+
+        <div class="info smaller-text">
+          <p>
+            Fair Use is an exception in US Copyright law that permits limited reproduction of a copyrighted work for purposes such as "criticism, comment, news reporting, teaching (including multiple copies for classroom use), scholarship, or research" -
+            <a href="https://www.copyright.gov/title17/92chap1.html#107">US Copyright Law</a>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Fair Use Continued</h3>
+
+        <div class="info smaller-text">
+          <p>When someone is sued for copyright infringement, the courts may consider four factors when evaluating whether the infringement is protected by fair use:</p>
+          <ul>
+            <li>Purpose and character of the use, including whether the use is commercial in nature or for nonprofit educational purposes</li>
+            <li>Nature of the copyrighted work - less likely to support a fair use claim for a creative or imaginative work than for a factual work</li>
+            <li>Amount and substantiality of the portion used in relation to the copyrighted work as a whole</li>
+            <li>Effect of the use upon the potential market for or value of the copyrighted work</li>
+          </ul>
+
+          <p>
+            <a href="https://www.copyright.gov/fair-use/more-info.html">More Info on Fair Use</a>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Digital Millennium Copyright Act (DMCA)</h3>
+
+        <div class="info smaller-text">
+          <p>Signed into law in 1998, this law extended copyright law and limited the liability of online service providers when users of their services infringe on copyrights. <a href="https://www.copyright.gov/legislation/dmca.pdf">DMCA Summary - US Copyright Office</a></p>
+        </div>
+      </section>
+
+      <section>
+        <h3>DMCA Takedown Notices</h3>
+
+        <div class="info smaller-text">
+          <p>A copyright holder can submit a takedown notice claiming that a work is infringing on a copyright. The service provider reviews the notice and makes a decision on whether or not the claim is valid. Service providers have different policies for handling this process.</p>
+          <p>The DMCA has been controversial over the years with claims that it has been used improperly to censor content or stifle competition.</p>
+          <p>References:</p>
+          <ul>
+            <li><a href="https://support.google.com/youtube/answer/2807622?hl=en">YouTube copyright takedown notice information</a></li>
+            <li><a href="https://help.github.com/articles/dmca-takedown-policy/">GitHub DMCA takedown policy</a></li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <h2>5-10 Minute Break</h2>
+    </section>
+
+    <section>
+      <section>
+        <h2>Transitioning from Prototyping in CodePen to the Atom Editor</h2>
+      </section>
+
+      <section>
+        <h3>Atom Editor</h3>
+
+        <div class="info smaller-text">
+          <p>We will begin by opening the Atom editor on your desktop or in the Start menu.</p>
+          <p>Atom is a free, open source, and fully customizable editor that many developers use for web development and other forms of programming.</p>
+          <p>Features include:</p>
+          <ul>
+            <li>Syntax highlighting (colors for different parts)</li>
+            <li>Code completion/tab completion for faster typing</li>
+            <li>Packages or plugins created by the community that assist with specific types of development</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Structuring a Project</h3>
+
+        <div class="info smaller-text">
+          <p>Follow the demo as we do the following:</p>
+
+          <ol>
+            <li>Create a new directory</li>
+            <li>Create a new file called <em>index.html</em></li>
+            <li>Paste a basic HTML template into <em>index.html</em></li>
+            <li>Open up <em>index.html</em> in your web browser</li>
+            <li>Create a directory named <em>styles</em></li>
+            <li>Create a file called <em>styles.css</em></li>
+          </ol>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <h2>Preview of next week's lesson</h2>
+
+      <p class="info">
+        We will learn create a simple multi-page website and publish it to GitHub Pages.
+      </p>
+    </section>
+  </div>
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      { src: '../plugin/markdown/marked.js' },
+      { src: '../plugin/markdown/markdown.js' },
+      { src: '../plugin/notes/notes.js', async: true },
+      { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+</script>
+</body>
+</html>
