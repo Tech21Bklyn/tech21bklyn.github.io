@@ -13,6 +13,10 @@ em {
 div.smaller-text {
   font-size: 0.75em;
 }
+div.single-spaced > p {
+  font-size: 0.5em;
+  line-height: 0.85;
+}
 
 p.smaller-text {
   font-size: 0.75em;

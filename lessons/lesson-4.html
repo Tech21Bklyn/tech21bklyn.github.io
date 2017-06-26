@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Tech 21 @ BPL Lesson 4 - Creating Multi-Page Websites</title>
+
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/black.css">
+  <link rel="stylesheet" href="../css/tech21.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section
+        data-background-image="../img/Clarendon-white.png"
+        data-background-size="500px"
+        data-background-position="bottom 20px left 20px"
+    >
+      <h1>Tech 21 @ BPL</h1>
+      <h3 style="color: #ffbb33">Lesson 4</h3>
+      <h2>Creating Multi-Page Websites</h2>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+
+      <div class="sub-header">This lesson will cover the following topics.</div>
+
+      <div class="info smaller-text">
+        <ul>
+          <li>Transitioning from CodePen to Local Development</li>
+          <li>Atom Text Editor</li>
+          <li>Version Control/Source Control Management</li>
+          <li>Git for Version Control</li>
+          <li>GitHub</li>
+          <li>GitHub Pages</li>
+          <li>Linking to Pages and Assets in a Website</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h3>Transitioning from CodePen to Local Development</h3>
+
+        <ul class="info smaller-text">
+          <li>CodePen is great for prototyping. You see your changes immediately, but it's not how websites are usually created (though CodePen's new Projects feature is trying to change this).</li>
+          <li>Traditionally, developers write their programs or websites in a local file structure on their computers, manage changes and releases with version control, and push the code to <em>production</em> servers</li>
+          <li>For websites, this file structure is determined by the web application framework or site generator software. We will use a static site generator called
+            <a href="https://jekyllrb.com/">Jekyll</a> and host on <a href="https://pages.github.com/">GitHub Pages</a>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Example File Structure</h3>
+
+        <img src="../img/lessons/site-file-structure-example.png" alt="Example of a website's file structure">
+      </section>
+
+      <section>
+        <h3>Example File Structure</h3>
+
+        <div class="info smaller-text">
+          <p>The previous example is only one way that a website could be structured. Developers may set up the file structure and use different naming conventions based on preference or the requirements of the framework. In many cases, the software can be told where to look for a specific file or type of files in the configuration.</p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Atom Text Editor</h3>
+
+        <div class="info smaller-text">
+          <p><a href="https://atom.io/">Atom</a> is a free, open source text editor that you can use to write the code for your website. It has features that make it superior to using a basic text editor such as notepad. They include:</p>
+          <ul class="smaller-text">
+            <li>Syntax highlighting - certain parts of the code are highlighted depending on the code type (HTML, CSS, JavaScript)</li>
+            <li>Auto completion - recommendations and code snippets appear while you type</li>
+            <li>Navigation - View the project's entire directory structure and easily navigate between files. View them in multiple tabs and panes.</li>
+            <li>Packages developed by the community - extends editor features and provides support for many programming languages and frameworks</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Popular Alternatives to Atom</h3>
+
+        <ul class="info">
+          <li><a href="https://www.sublimetext.com/">Sublime Text</a></li>
+          <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+          <li><a href="https://www.jetbrains.com/webstorm/">Webstorm</a></li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Learning Atom</h3>
+
+        <div class="info smaller-text">
+          <p>Follow along as I demo the following features of Atom:</p>
+          <ul>
+            <li>Creating directories and files</li>
+            <li>Using auto-completion to generate HTML page structure</li>
+            <li>File type identification for syntax highlighting</li>
+            <li>Enabling soft wrap to automatically wrap long lines</li>
+            <li>Multiple tabs and panes</li>
+          </ul>
+
+          <p><a href="http://flight-manual.atom.io/">Atom Flight Manual</a></p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Recommended Atom Packages to Install</h3>
+
+        <div class="info smaller-text">
+          <p>In Atom for Windows, select File > Settings > Install tab or use the shortcut CTRL + ,</p>
+          <p>Type in the name of a package below in the Search packages input field and click Install.</p>
+          <ul>
+            <li>atom-beautify</li>
+            <li>linter</li>
+            <li>linter-eslint</li>
+            <li>linter-htmlhint</li>
+            <li>linter-ui-default</li>
+            <li>multi-cursor</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Emmet Package</h3>
+
+        <div class="info smaller-text">
+          <p><a href="https://emmet.io/">Emmet</a> is another popular plugin that you can install in Atom and other text editors to speed up your development with a shortcut language.</p>
+
+          <p>Example: Assign multiple classes to an element by typing the following and pressing enter: <em>p.class-one.class-two</em></p>
+          <p>Example: Wrapping multiple lines in a list item tag using: CTRL + ALT + w and then typing: <em>li*</em></p>
+          <p><a href="https://docs.emmet.io/cheat-sheet/">Emmet Commands</a></p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <h4>Useful Shortcuts in Windows</h4>
+
+      <div class="info single-spaced">
+        <p>General Shortcuts</p>
+        <p><em>CTRL + C</em>: Copy selection to clipboard</p>
+        <p><em>CTRL + X</em>: Cut selection to clipboard (Copy and delete)</p>
+        <p><em>CTRL + V</em>: Paste clipboard</p>
+        <p><em>CTRL + F</em>: Find in file</p>
+
+        <p>Atom Shortcuts (<a href="https://github.com/nwinkler/atom-keyboard-shortcuts">https://github.com/nwinkler/atom-keyboard-shortcuts</a>)</p>
+
+        <p><em>CTRL + S</em>: Save File</p>
+        <p><em>CTRL + SHIFT + S</em>: Save File As</p>
+        <p><em>CTRL + N</em>: New File</p>
+        <p><em>CTRL + P</em>: Open file finder dialog</p>
+        <p><em>CTRL + B</em>: Browse open files </p>
+        <p><em>CTRL + SHIFT + I</em>: Toggle developer tools</p>
+        <p><em>CTRL + SHIFT + D</em>: Duplicate line</p>
+        <p><em>CTRL + SHIFT + K</em>: Delete line</p>
+        <p><em>CTRL + L</em>: Select line</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>Version Control/Source Control Management</h3>
+
+      <div class="info smaller-text">
+        <p>Version Control, also referred to as Source Control Management (SCM) is a system for tracking changes over time to files that make up your codebase.</p>
+        <p>SCM tools help developers organize code, collaborate with other developers who are working on the same code base, and control what changes make it into the final code base.</p>
+        <p>Some examples of commonly used SCMs include Git, Mercurial, Subversion, and Perforce.</p>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h3>Git</h3>
+
+        <div class="info smaller-text">
+          <p>Git is a version control system that keeps track of changes in files. We will focus on it in this course.</p>
+          <p>Git is distributed, meaning that a copy of the code repository is contained on each user's computer.</p>
+          <p>Git stores the deltas (changes) between versions of a file in order to save space.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Git Terms</h3>
+
+        <div class="info single-spaced">
+          <p><em>Repository</em> - A project folder containing files and the history of their revisions</p>
+          <p><em>Branch</em> - A parallel version of a repository that one typically creates to work on a feature before merging it back into the master branch</p>
+          <p><em>Merge</em> - Applying the changes from one branch into another branch</p>
+          <p><em>Commit</em> - A set of revisions or changes to one or more files. A descriptive commit message is provided by the user to label these changes.</p>
+          <p><em>Diff</em> - The difference between two commits</p>
+          <p><em>Master Branch</em> - The main branch that should reflect the production-ready state of the project</p>
+          <p><em>HEAD</em> - The current commit or snapshot of the project that you are working on</p>
+
+          <p><a href="https://help.github.com/articles/github-glossary/">GitHub Glossary</a></p>
+          <p><a href="https://www.atlassian.com/git/glossary/terminology">Git Terminology</a></p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <h3>GitHub</h3>
+
+      <div class="info smaller-text">
+        <p><a href="https://github.com/">GitHub</a> is a web service platform for storing and sharing projects. GitHub allows developers to collaborate on projects and is the most used platform for the open source community.</p>
+        <p>GitHub allows a user to have unlimited public repositories or open source projects, but you need to pay a monthly subscription if you want private repositories.</p>
+        <p>Alternatives to GitHub include BitBucket (by Atlassian), GitLab</p>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h3>Command Line Git and GitHub Desktop App</h3>
+
+        <div class="info smaller-text">
+          <p>We will familiarize ourselves with using Git in the command line, which many programmers use, and the GitHub Desktop App, which provides a graphical interface for the Git commands.</p>
+          <p>Commands we will cover:</p>
+
+          <ul class="smaller-text">
+            <li>git config</li>
+            <li>git init</li>
+            <li>git add</li>
+            <li>git commit</li>
+            <li>git clone</li>
+            <li>git remote (git remote add origin [remote URL])</li>
+            <li>git pull</li>
+            <li>git push</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Cloning an Existing Project</h3>
+
+        <div class="info smaller-text">
+          <p>We can also use an existing project template. <a href="https://github.com/Tech21Bklyn/initializr-bootstrap-site-template">Clone this project from GitHub.</a></p>
+          <p>This project uses the boilerplate code generator at <a href="http://www.initializr.com/">http://www.initializr.com/</a></p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <h3>Using GitHub</h3>
+
+      <div class="info">
+        <p>On the <a href="https://github.com">GitHub</a> website, we will do the following:</p>
+        <ol>
+          <li>Login</li>
+          <li>Create a New Repository called [username].github.io</li>
+          <li>Clone the repository to your computer</li>
+          <li>Create files and commit the changes</li>
+          <li>Push the commits to GitHub</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h3>GitHub Pages</h3>
+
+      <div class="info smaller-text">
+        <p><a href="https://pages.github.com/">GitHub Pages</a> provides you with a personal page or project pages that are hosted on GitHub's servers.</p>
+        <p>You can create a website by creating a repository on GitHub called [username].github.io and adding .html files to it.</p>
+        <p>You can also create GitHub pages for other projects by enabling it in the repoistory's settings.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>Linking to pages and assets in a website</h3>
+
+      <div class="info">
+        <p>To keep the files in a project organized, we will want to group them into folders or directories based on their purpose or level in the site hierarchy. To reference another file or create a link from within a page, we can use either <em>absolute paths</em> or <em>relative paths</em></p>
+      </div>
+    </section>
+    <section data-markdown>
+      <script type="text/template">
+        ### Absolute Path
+
+        <div class="info smaller-text">
+          <p>An absolute path is the complete path to a resource. An example would be a complete URL including the domain name. This allows a program to locate the resource regardless of where the starting point is.</p>
+          <p>Absolute paths are used when referencing an external resource or link.</p>
+        </div>
+
+        ```html
+        https://tech21bklyn.github.io/lessons/lesson-4.html
+        ```
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+        ### Relative Path
+
+        <div class="info smaller-text">
+          <p>Relative Paths use the current directory (of the HTML file in this case) as the starting point to reaching other resources and are commonly used when accessing a resource within the same site.</p>
+          <p>A single period <em>.</em> represents the current directory.</p>
+          <p>Two periods <em>..</em> represents going up one directory.</p>
+          <p>A slash with a directory name <em>/directory/</em> represents going deeper into the directory.</p>
+        </div>
+
+        ```html
+        <a href="./pages/some-page.html">From current directory
+          of index.html</a>
+
+        <a href="../index.html">From pages directory of
+          some-page.html</a>
+        ```
+      </script>
+    </section>
+
+    <section>
+      <h2>Next week's lesson</h2>
+
+      <p class="info">
+        We will learn the basics of programming with JavaScript to add interactivity to websites.
+      </p>
+    </section>
+  </div>
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      { src: '../plugin/markdown/marked.js' },
+      { src: '../plugin/markdown/markdown.js' },
+      { src: '../plugin/notes/notes.js', async: true },
+      { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+</script>
+</body>
+</html>
