@@ -15,7 +15,7 @@ div.smaller-text {
 }
 div.single-spaced > p {
   font-size: 0.5em;
-  line-height: 0.85;
+  line-height: 0.85 !important;
 }
 
 p.smaller-text {
