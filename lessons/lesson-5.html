@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Tech 21 @ BPL Lesson 5 - The Bootstrap Framework</title>
+
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/black.css">
+  <link rel="stylesheet" href="../css/tech21.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section
+        data-background-image="../img/Clarendon-white.png"
+        data-background-size="500px"
+        data-background-position="bottom 20px left 20px"
+    >
+      <h1>Tech 21 @ BPL</h1>
+      <h3 style="color: #ffbb33">Lesson 5</h3>
+      <h2>The Bootstrap Framework</h2>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+
+      <div class="sub-header">This lesson will cover the following topics.</div>
+
+      <div class="info smaller-text">
+        <ul>
+          <li>What is Bootstrap?</li>
+          <li>Grid Layout</li>
+          <li>Navigation</li>
+          <li>Jumbotron Header</li>
+          <li>Buttons and Button Groups</li>
+          <li>Icons / Glyphicons</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>What is Bootstrap?</h3>
+
+      <div class="info smaller-text">
+        <p><a href="http://getbootstrap.com/">Bootstrap</a> is a front-end framework for HTML, CSS, and JavaScript that was originally created at Twitter. Bootstrap and other similar frameworks speed up development by providing you with boilerplate code and advanced components so you don't have to create them from scratch.</p>
+
+        <p>This lesson uses the latest release version, Bootstrap 3. Bootstrap 4 is currently under development.</p>
+
+        <p><a href="http://getbootstrap.com/components/">Components</a> include parts commonly found on websites such as icons, buttons, navigation.</p>
+
+        <p>It also includes a <a href="http://getbootstrap.com/examples/grid/">grid system</a> for creating a responsive layout that scales depending on the size of the file.</p>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h3>Grid Layout</h3>
+
+        <div class="info smaller-text">
+          <p>The <a href="http://getbootstrap.com/examples/grid/">grid system</a> makes it easy to organize page elements into rows and columns that scale automatically depending on the type of device.</p>
+
+          <p>Four prefixes are used to represent different device size tiers that are set using the class property of a div element:</p>
+          <ul class="smaller-text">
+            <li>xs (phones)</li>
+            <li>sm (tablets)</li>
+            <li>md (desktops)</li>
+            <li>lg (larger desktops)</li>
+          </ul>
+
+          <p>If you want the layout to be the same for a size tier and larger, you only need to specify the smallest size tier with a unique layout since they scale up. Otherwise, you can specify more than one tier in the classes.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Grid Layout Rows and Columns</h3>
+
+        <div class="info smaller-text">
+          <p>Each row contains columns that add up to 12 units. For example, a three column layout with even column sizes could use three divs with classes: .col-sm-4, .col-sm-4, .col-sm-4</p>
+
+          <p>The columns are nested within a div that has the <em>row</em> class.</p>
+
+          <p>You can also create columns within a column by repeating the structure within a column div container.</p>
+
+          <p>Let's look at the following examples on <a href="https://github.com/Tech21Bklyn/initializr-bootstrap-site-template/commit/4b65d89e72adf023de0adc201853b7d9ec6f7785">GitHub</a></p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Navigation</h3>
+
+        <div class="info smaller-text">
+          <p>Bootstrap has several styles of <a href="http://getbootstrap.com/components/#nav">Nav</a> elements to use including tabs and pills. These elements use unordered lists (ul) elements. We will look at the code in this <a href="https://github.com/Tech21Bklyn/initializr-bootstrap-site-template/pull/1">example</a> to learn how to implement a multi-page navigation bar.</p>
+
+          <p>You should review the concepts of relative and absolute paths from <a href="lesson-4.html">Lesson 4</a> if you do not remember how to create links to other pages.</p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Jumbotron Header</h3>
+
+        <div class="info smaller-text">
+          <p>The <a href="http://getbootstrap.com/components/#jumbotron">Jumbotron</a> component is typically used at the top of the page to showcase important site content such as a banner or photograph.</p>
+
+          <p>Using CSS, we can apply styles to the Jumbotron such as a background image. The following <a href="https://github.com/Tech21Bklyn/initializr-bootstrap-site-template/commit/1be8ad1da4cff99b5b3c6659a8b43d5568e5e796">example code</a> illustrates some of the properties that you can use.</p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Buttons and Button Groups</h3>
+
+        <div class="info smaller-text">
+          <p>You can create <a href="http://getbootstrap.com/components/#btn-groups">individual buttons or groups</a> using Bootstraps classes. Buttons provide visual feedback when you click on them and can either link to another page (by applying the classes to an anchor tag) or manipulate parts of the page using JavaScript.</p>
+
+          <p><a href="https://github.com/Tech21Bklyn/initializr-bootstrap-site-template/commit/1315fe2ac134b58d49ede5b0ba628a8f0343a3d6">This example</a> shows the use of buttons and groups.</p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Icons / Glyphicons</h3>
+
+        <div class="info smaller-text">
+          <p><a href="http://getbootstrap.com/components/#glyphicons">Icons</a> are included as part of Bootstrap that can be used to create components such as buttons or text. They are inline elements that work similar to text and are created by adding classes with the icon name to a span.</p>
+
+          <p><a href="https://github.com/Tech21Bklyn/initializr-bootstrap-site-template/commit/55cc6b3ec8b0760bd15fa78752b702a6886a5015">Example code</a> for glyphicon usage.</p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <h2>Next week's lesson</h2>
+
+      <p class="info">
+        We will learn the basics of programming with JavaScript to add interactivity to websites.
+      </p>
+    </section>
+  </div>
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      { src: '../plugin/markdown/marked.js' },
+      { src: '../plugin/markdown/markdown.js' },
+      { src: '../plugin/notes/notes.js', async: true },
+      { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+</script>
+</body>
+</html>
