@@ -289,7 +289,7 @@
           let doubleQuotes = "This uses double quotes";
           let singleQuotes = 'This uses single quotes';
 
-          console.log(doubleQuotes + singleQuotes);
+          console.log(doubleQuotes + " " + singleQuotes);
           ```
         </script>
       </section>
@@ -347,14 +347,14 @@
           ```js
           let food = {};
 
-          object.name = 'Sandwich';
-          object.price = 3.45;
-          object.quantity = 5;
+          food.name = 'Sandwich';
+          food.price = 3.45;
+          food.quantity = 5;
           ```
 
           ```js
           let food = {
-            name = 'Sandwich',
+            name: 'Sandwich',
             price: 3.45,
             quantity: 5,
           };
@@ -374,7 +374,7 @@
 
           ```js
           let food = {
-            name = 'Sandwich',
+            name: 'Sandwich',
             price: 3.45,
             quantity: 5,
           };
@@ -567,10 +567,12 @@
           ```js
           function function1() {
             let x = 1;
+            return x;
           }
 
           function function2() {
             let x = 2;
+            return x;
           }
 
           // The variable name x can be used in both functions due to scope.
