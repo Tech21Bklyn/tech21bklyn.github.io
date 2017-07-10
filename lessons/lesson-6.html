@@ -1,0 +1,847 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Tech 21 @ BPL Lesson 6 - Introduction to JavaScript</title>
+
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/black.css">
+  <link rel="stylesheet" href="../css/tech21.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section
+        data-background-image="../img/Clarendon-white.png"
+        data-background-size="500px"
+        data-background-position="bottom 20px left 20px"
+    >
+      <h1>Tech 21 @ BPL</h1>
+      <h3 style="color: #ffbb33">Lesson 6</h3>
+      <h2>Introduction to JavaScript</h2>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+
+      <div class="sub-header">This lesson will cover the following topics.</div>
+
+      <div class="info smaller-text">
+        <ul>
+          <li>JavaScript and its history</li>
+          <li>Statements</li>
+          <li>Variables</li>
+          <li>Data Types</li>
+          <li>Functions</li>
+          <li>Scope</li>
+          <li>Blocks</li>
+          <li>Comparison Operators</li>
+          <li>Adding JavaScript to a Web Page</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### JavaScript
+
+          <div class="info smaller-text">
+            <p>JavaScript (JS) is a programming language that is supported in all modern web browsers. JS creates dynamic behavior in websites so that users can have an interactive experience.</p>
+
+            <p>JS can be written for the client side (executed in the browser) or server side (executed in the server). Client side JS can be written inline in an HTML file or packaged as separate file. This lesson only covers client side JS.</p>
+          </div>
+        </script>
+      </section>
+
+      <section>
+        <h3>History of JavaScript</h3>
+
+        <div class="info smaller-text">
+          <p>JavaScript was created in 1995 at Netscape (now Mozilla) by Brendan Eich. It was originally called Mocha, then LiveScript, then eventually renamed to JavaScript to take advantage of the popularity of another programming language called Java. JS is very different from Java, which can cause some initial confusion.</p>
+
+          <p>The task of creating a standards specification for JS was given to ECMA (European Computer Manufacturers Association) so that other browser vendors could also utilize it. The official standard is known as ECMAScript or ES.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>ECMAScript Versions</h3>
+
+        <div class="info smaller-text">
+          <ul class="smaller-text">
+            <li>ECMAScript - released June 1997</li>
+            <li>ECMAScript 2 - released June 1998</li>
+            <li>ECMAScript 3 - released Dec 1999</li>
+            <li>ECMAScript 4 - abandoned in 2008 due to major disagreements among developers.</li>
+            <li>ECMAScript 5 - released in Dec 2009, it is the version supported in all modern browsers (not Internet Explorer 5).</li>
+            <li>ECMAScript 6 (ES2015) - released June 2015, this standard adds significant new syntax for writing complex applications, but is not fully supported in all modern browsers. Code written in ES2015 can be converted to ES5 through a process called transpiling.</li>
+            <li>ECMAScript 7 (ES2016) - released June 2016</li>
+            <li>ECMAScript 8 (ES2017) - released June 2017</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Statements
+
+          <div class="info smaller-text">
+            <p>A statement is a single executable instruction of code. Programs are made up of multiple statements. Each statement is terminated by a semi-colon (optional) or a new line. The decision to use semi-colons or not is based on convention. For this course, we will use semi-colons.</p>
+          </div>
+
+          ```js
+          var x = 1
+          var a = 1;
+          var b = 2;
+          a + b
+
+          // All the statements can be included on a single line,
+          // but this is more difficult to read.
+          var a = 1; var b = 2; a + b;
+
+          ```
+        </script>
+      </section>
+
+      <section>
+        <h3>Executing JavaScript</h3>
+
+        <div class="info smaller-text">
+          <p>JavaScript can be executed in the Google Chrome console (CTRL + SHIFT + I or right click and select Inspect).</p>
+
+          <p>We will also use the <a href="https://codepen.io/">CodePen</a> JS window and open up the Console tab in the bottom left corner of the window.</p>
+
+          <p>We will also call a special function called <em>console.log()</em> that will use to print out the results of our JavaScript code.</p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Variables
+
+          <div class="info smaller-text">
+            <p>A variable is a named location for storing a value in memory. Assigning values to a variable is similar to how values are assigned in mathematics. There are three ways to declare a variable in JS. This example shows multiple ways to declare a variable named "x".</p>
+          </div>
+
+          ```js
+          // This declares a variable that can be assigned properties.
+          var x;
+
+          // Introduced in ES2015, this declares a block-scoped, local variable
+          let x;
+
+          // This declares a read-only variable or constant
+          const x;
+          ```
+          <p class="info smaller-text"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types">Additional Reading</a></p>
+          <p class="info smaller-text"><a href="https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/">ES6 In Depth: let and const</a></p>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Naming Convention
+
+          <div class="info smaller-text">
+            <p>JS variable names, also known as identifiers, should be descriptive so that the reader understands the purpose of the variable. Identifies are case sensitive. The convention is to use camel case.</p>
+
+            <p>Identifiers must start with a letter, underscore (_) or dollar sign. The rest of the characters may include numbers.</p>
+
+            <p>By convention, variables and functions are written in camelCase while constants are written in UPPERCASE.</p>
+          </div>
+
+          ```js
+          let thisIsCamelCase;
+
+          const THIS_IS_UPPERCASE;
+          ```
+        </script>
+      </section>
+
+
+    </section>
+
+    <section>
+      <section>
+        <h3>Data Types</h3>
+
+        <div class="info smaller-text">
+          <p>JavaScript is a dynamically typed language, meaning that the type of a variable doesn't have to be specified when it is declared.</p>
+
+          <p>There are 6 <em>primitive</em> data types and a 7th data type called an <em>Object</em>. Primitives are not objects and they do not have any methods (functions).</p>
+
+          <ul>
+            <li>Boolean</li>
+            <li>Null</li>
+            <li>Undefined</li>
+            <li>Number</li>
+            <li>String</li>
+            <li>Symbol</li>
+          </ul>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Boolean
+
+          <div class="info">
+            <p>This type can have one of two values: true or false. It is typically used in a conditional statement.</p>
+          </div>
+
+          ```js
+          let isLightOn = true;
+
+          if (isLightOn) {
+            console.log("Turn the light off to save energy");
+          } else {
+            console.log("The light is off.");
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Null
+
+          <div class="info">
+            <p>Represents no value for a variable. Null is assigned intentionally.</p>
+
+            <p>The data type of Null is an object.</p>
+          </div>
+
+          ```js
+          let x = null;
+          console.log(x);
+          console.log(typeof x);
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Undefined
+
+          <div class="info">
+            <p>Similar to null, it represents no value. When a variable is declared, but no assignment is made, it defaults to undefined.</p>
+          </div>
+
+          ```js
+          let y;
+          console.log(y);
+          console.log(typeof y);
+          ```
+        </script>
+      </section>
+
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Number
+
+          <div class="info smaller-text">
+            <p>Represents a numeric value which can be an integer or a floating point number. Some programming languages have different data types for numbers (i.e. integer, float, decimal), but JS only has one type.</p>
+
+            <p>There is also NaN (Not a Number), a special reserved word indicating that a value is not a valid number.</p>
+          </div>
+
+          ```js
+          let x = 3;
+          let y = 2.5;
+          console.log(x + y);
+          console.log(x * y);
+          console.log(x / y);
+
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### String
+
+          <div class="info">
+            <p>Strings are a sequence of characters that are defined using single or double quotes.</p>
+
+            <p>You can concatenate or combine strings into a new string using the + operator.</p>
+          </div>
+
+          ```js
+          let doubleQuotes = "This uses double quotes";
+          let singleQuotes = 'This uses single quotes';
+
+          console.log(doubleQuotes + singleQuotes);
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Symbol
+
+          <div class="info">
+            <p>Introduced to JS in the ES2015/ES6 specification, Symbols can be used as unique keys in an object.</p>
+          </div>
+
+          ```js
+          const newSymbol = Symbol('foo');
+
+          let myObject = {};
+          myObject[newSymbol] = 'This is a value';
+
+          ```
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Objects
+
+          <div class="info smaller-text">
+            <p>An Object is an entity that possesses properties and types. Properties can be one of the primitives or a method. There are multiple ways to access and assign properties in an Object.</p>
+
+            <p>Both of the following statements can be used to create an object.</p>
+          </div>
+
+          ```js
+          let myObject = new Object();
+          ```
+
+          ```js
+          let myObject = {};
+          ```
+
+          <p class="info smaller-text"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Additional Reading</a></p>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Initializing Objects
+
+          <div class="info smaller-text">
+            <p>There are multiple ways to assign properties to objects. Both of the examples below will have the same end result.</p>
+          </div>
+
+          ```js
+          let food = {};
+
+          object.name = 'Sandwich';
+          object.price = 3.45;
+          object.quantity = 5;
+          ```
+
+          ```js
+          let food = {
+            name = 'Sandwich',
+            price: 3.45,
+            quantity: 5,
+          };
+          ```
+
+          <p class="info smaller-text"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer">Additional Reading</a></p>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Accessing Properties
+
+          <div class="info smaller-text">
+            <p>Objects can be accessed using the dot notation or bracket notation.</p>
+          </div>
+
+          ```js
+          let food = {
+            name = 'Sandwich',
+            price: 3.45,
+            quantity: 5,
+          };
+          ```
+
+          ```js
+          console.log(food.name); // Dot notation
+          console.log(food['name']); // Bracket notation
+
+          food.name = 'Taco';
+          console.log(food.name);
+
+          food['name'] = 'Salad';
+          console.log(food.name);
+          ```
+
+          <p class="info smaller-text"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors">Additional Reading</a></p>
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Functions
+
+          <div class="info smaller-text">
+            <p>A function is a set of statements that perform a task. A function declaration contains the name of a function, parenthesis containing 0 or more parameters, and then statements enclosed within curly braces. A semi-colon is not required at the end of a function definition after the closing brace.</p>
+
+            <p>If a value should be returned as the result of a function execution, the function should end with a return statement.</p>
+
+            <p>When a function is assigned as a property of an object, it is called a <em>method</em>.</p>
+          </div>
+
+          ```js
+          function addTwoNumbers(x, y) {
+            let result = x + y;
+            return result;
+          }
+
+          console.log(addTwoNumbers(1, 4));
+          ```
+
+          <p class="info smaller-text"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">Additional Reading</a></p>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Declaring Functions
+
+          <div class="info">
+            <p>There are several ways to declare a function. A function can have a name or be anonymous.</p>
+          </div>
+
+          ```js
+          function namedFunction() {
+            /* This has a name */
+          }
+
+          function() {
+            /* This anonymous function has no name */
+          }
+
+          var namedFunction = function() {
+            /* Another way to declare */
+          };
+
+          let namedFunction = () => {
+            /* Arrow functions () => {} were added in ES2015 */
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Declaring Functions with Parameters
+
+          <div class="info smaller-text">
+            <p><em>Parameters</em> are variables specified in a function definition. In the function call, the values that are passed to the function's parameters are called <em>arguments</em>.</p>
+
+            <p>In JS, all variables are passed by value, unlike other programming languages where you may be able to pass by reference. This means that even if the function changes the argument's value within the function, it does not change the value of the original variable passed into the function.</p>
+          </div>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Declaring Functions with Parameters Example
+
+          ```js
+          function multiplyNumbers(paramX, paramY) {
+            return paramX * paramY;
+          }
+
+          argumentX = 4;
+          argumentY = 3;
+
+          let result = multiplyNumbers(argumentX, argumentY);
+
+          console.log(result);
+          ```
+        </script>
+      </section>
+
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Calling or Invoking Functions
+
+          <div class="info smaller-text">
+            <p>A function is executed by writing a statement with the function name followed by parenthesis. If the function accepts parameters, arguments are passed to the function inside the parenthesis. You can also call a function within another function.</p>
+          </div>
+
+          ```js
+          function addTwoNumbers(x, y) {
+            return x + y;
+          }
+
+          function logTheResult(x, y) {
+            console.log(addTwoNumbers(x, y));
+          }
+
+          logTheResult(1, 2);
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Calling Functions Immediately
+
+          <div class="info">
+            <p>It is also possible to call a function immediately after it is declared. This is done by wrapping the function in parenthesis and adding another set of parenthesis after it.</p>
+          </div>
+
+          ```js
+          (function addTwoNumbers(x, y) {
+            console.log(x + y);
+          })(1, 2);
+          ```
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Scope</h3>
+
+        <div class="info smaller-text">
+          <p>Scope is an important concept in programming. Scope determines which variables and functions can be accessed at a point in the code. In JS, scope can be <em>local</em> or <em>global</em></p>
+
+          <p>In local scope, a variable can only be accessed within the function it is declared inside.</p>
+
+          <p>In global scope, a variable or function can be accessed from anywhere on the page and can also be accessed through the <em>window</em> object.</p>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Scope Examples
+
+          Global Scope
+
+          ```js
+          let myVariable = 'This is global';
+
+          function myFunction() {
+            console.log(myVariable);
+          }
+          ```
+
+          Local Scope
+
+          ```js
+          function myFunction() {
+            let localVariable = 'This is local';
+          }
+
+          console.log(localVariable); // This returns an error
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Scope Examples
+
+          Local Scope
+
+          ```js
+          function function1() {
+            let x = 1;
+          }
+
+          function function2() {
+            let x = 2;
+          }
+
+          // The variable name x can be used in both functions due to scope.
+          console.log(function1());
+          console.log(function2());
+          ```
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Blocks
+
+          <div class="info smaller-text">
+            <p>In JS, blocks are related statements that are enclosed in braces {}. They are commonly used with control flow statements that affect the execution flow depending on a condition (such as an if else statement). Note that semi-colons are not required after the closing brace.</p>
+          </div>
+
+          ```js
+          let x = 5;
+
+          if (x >= 10) {
+            console.log("x is greater than or equal to 10");
+          } else {
+            console.log("x is less than 10");
+          }
+          ```
+
+          ```js
+          x = 0;
+
+          while (x < 10) {
+            console.log(x + " is less than 10");
+            x++; // ++ is an operator that increments a variable by 1
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Block Level Scope
+
+          <div class="info smaller-text">
+            <p>Prior to ES2015, there was no concept of block level scope in JS. A variable's scope could only be local to the entire function.</p>
+          </div>
+
+          ```js
+          (function myFunction() {
+            var x = 2;
+
+            for (var i = 0; i < 10; i++)
+            {
+              // This overrides the previously defined x variable
+              // due to function scope.
+              var x = i;
+            }
+
+            console.log(x);
+          })();
+
+          ```
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Block Level Scope Continued
+
+          <div class="info smaller-text">
+            <p>In ES2015, <em>let</em> and <em>const</em> allow you to define variables with block level scope.</p>
+          </div>
+
+          ```js
+          (function myFunction() {
+            let x = 2;
+
+            for (let i = 0; i < 10; i++)
+            {
+              // The x defined below is in block scope, so the following
+              // statement does not change the x variable outside this block.
+              let x = i;
+            }
+
+            console.log(x);
+          })();
+
+          ```
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Comparison Operators  - Equality
+
+          <div class="info smaller-text">
+            <p>Equality Operators are used to compare two operands or variables. There are two types: type-converting and strict.</p>
+
+            <p>Type-converting is represented by a double equals sign or exclamation and equal sign. The exclamation point is sometimes referred to as the <em>not operator</em>.</p>
+          </div>
+
+          ```js
+          // Equality: returns true if left side is equal to right side
+          x == y
+
+          // Inequality: returns true if left side is not equal to right side
+          x != y
+
+          1 == '1'; // returns true
+          1 != 2; // returns true
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Comparison Operators - Strict Equality
+
+          <div class="info smaller-text">
+            <p>Strict equality operators also compare type.</p>
+
+            <p>It is represented by a triple equals sign or exclamation and double sign.</p>
+          </div>
+
+          ```js
+          // Strict equality: returns true if left side is equal to right
+          // side and the same type
+          x === y
+
+          // Inequality: returns true if left side is not equal to right side
+          // and/or not the same type
+          x !== y
+
+          1 === 1; // returns true
+          1 === '1'; // returns false
+          1 !== 2; // returns true
+          1 !== '1'; // returns true
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Comparison Operators - Relational
+
+          <div class="info smaller-text">
+            <p>Relational operators compare the left hand and right hand sides using the greater than or less than symbols. They return true or false depending on the condition. If the data types are different, relational operators will perform a type conversion.</p>
+          </div>
+
+          ```js
+          // Greater than
+          x > y
+
+          // Greater than or equal
+          x >= y
+
+          // Less than
+          x < y
+
+          // Less than or equal
+          x <= y
+          ```
+        </script>
+      </section>
+
+
+      <section>
+        <h3>Difference Between Null and Undefined</h3>
+
+        <div class="info smaller-text">
+          <p>If you are interested in learning about how Null and Undefined interact when comparison operators are used, you can read the following article.</p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null</a></p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <textarea data-template>
+          ### Adding JavaScript to Web Pages
+
+          <div class="info smaller-text">
+            <p>There are multiple ways to add JS to a web page. The first is to embed the JS in an HTML document using a <em>script</em> tag. This method places the script anywhere in the head or body of an HTML document.</p>
+          </div>
+
+          ```html
+          <body>
+            <button type="button" onclick="alertOnClick()">Click Me</button>
+
+            <script>
+              function alertOnClick() {
+                alert("This shows up when button is clicked.");
+              }
+            </script>
+          </body>
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Adding JavaScript to Web Pages
+
+          <div class="info smaller-text">
+            <p>The next method is to load the JS from an external file. The reference to the script is passed as a path in the src property of the script. Again, the script tag can be declared in the head or body of the HTML document.</p>
+
+            <p>This is the preferred method because it separates HTML from code and makes the files easier to read and maintain.</p>
+          </div>
+
+          ```html
+          <!-- index.html -->
+
+          <body>
+            <button type="button" onclick="alertOnClick()">Click Me</button>
+
+            <script src="script.js"></script>
+          </body>
+          ```
+
+          ```js
+          // script.js
+
+          function alertOnClick() {
+            alert("This shows up when button is clicked.");
+          }
+          ```
+        </textarea>
+      </section>
+    </section>
+
+    <section>
+      <h3>Learning Resources</h3>
+
+      <div class="info">
+        <p><a href="https://www.codecademy.com/learn/learn-javascript">Code Academy JavaScript course</a> -lessons are free, but a PRO account is required for quizzes and projects</p>
+        <p><a href="https://www.bklynlibrary.org/lynda">Lynda.com</a> - Free access with your Brooklyn Public Library card and PIN #</p>
+        <p><a href="https://codecombat.com/">Code Combat</a> - learn programming in a game</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Next week's lesson</h2>
+
+      <p class="info">
+        We will learn more about basic programming and JavaScript including if statements, loops, and arrays. We will also learn how to integrate JS a web page to manipulate DOM elements and add interactivity.
+      </p>
+    </section>
+  </div>
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      { src: '../plugin/markdown/marked.js' },
+      { src: '../plugin/markdown/markdown.js' },
+      { src: '../plugin/notes/notes.js', async: true },
+      { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+</script>
+</body>
+</html>
