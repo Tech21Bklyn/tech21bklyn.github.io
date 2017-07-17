@@ -58,3 +58,9 @@ ul.no-bullets > li {
   border: 2px solid white !important;
   padding: 4px !important;
 }
+
+.scrollable {
+  bottom: 0px;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}

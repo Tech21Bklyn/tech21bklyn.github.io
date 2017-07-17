@@ -1,0 +1,559 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Tech 21 @ BPL Lesson 7 - Adding Interactivity with JavaScript</title>
+
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/black.css">
+  <link rel="stylesheet" href="../css/tech21.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section
+        data-background-image="../img/Clarendon-white.png"
+        data-background-size="500px"
+        data-background-position="bottom 20px left 20px"
+    >
+      <h1>Tech 21 @ BPL</h1>
+      <h3 style="color: #ffbb33">Lesson 7</h3>
+      <h2>Adding Interactivity with JavaScript</h2>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+
+      <div class="sub-header">This lesson will cover the following topics.</div>
+
+      <div class="info smaller-text">
+        <ul>
+          <li>Control Structures
+            <ul class="dashed">
+              <li>Conditional Statements: If, If...Else, Else If, and Switch</li>
+              <li>Loops: While, Do/While, For, and For/In</li>
+            </ul>
+          </li>
+          <li>Arrays</li>
+          <li>Adding Interactivity
+            <ul class="dashed">
+              <li>Events and Event Listeners</li>
+              <li>Forms and Input</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>More Basic JavaScript Concepts</h3>
+
+      <div class="info">
+        <p>We are going to learn how to make a web page interactive, but first we should learn about two more fundamental JavaScript concepts: Control Structures and Arrays.</p>
+      </div>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Control Structures
+
+          <div class="info smaller-text">
+            <p>Control Structures are a fundamental concept in programming. They tell the program which direction to go based on condition and the given parameters.</p>
+
+            <p>Normally, a program will be read and executed in the order that statements are written, but control structures can be used to tell the computer when to execute, which sections to skip, or which sections to repeat (and how many times to repeat). In this lesson, we will learn about conditional statements and loops.</p>
+          </div>
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Conditional Statements - If
+
+          <div class="info smaller-text">
+            <p>A conditional statement tells the program to perform different actions based on a condition.</p>
+
+            <p>The simplest is the <em>if</em> statement, which executes a block of code only if the condition evaluates to true. It is declared by writing if followed by a condition in parenthesis. In this example, we will test whether a variable x is greater than 4.</p>
+          </div>
+
+          ```js
+          if (x > 4) {
+            console.log(x + " is greater than 4!");
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Conditional Statements - If...Else
+
+          <div class="info smaller-text">
+            <p>An <em>else</em> statement can be added after an if statement to execute a block of code when the if condition evaluates to false.</p>
+          </div>
+
+          ```js
+          if (x > 4) {
+            console.log(x + " is greater than 4");
+          } else {
+            console.log(x + " is not greater than 4");
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Conditional Statements - Else If
+
+          <div class="info smaller-text">
+            <p>An <em>else if</em> statement can be added between the if and else blocks in order to specify additional conditions to check. One or more else if statements may be used. If the condition is not true, the program skips the block and moves on to the next condition.</p>
+          </div>
+
+          ```js
+          if (x > 4) {
+            console.log(x + " is greater than 4");
+          } else if (x > 2) {
+            console.log(x + " is greater than 2");
+          } else if (x >= 0) {
+            console.log(x + " is 0 or greater");
+          } else {
+            console.log(x + " is not greater than 0");
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Conditional Statements - Switch
+
+          <div class="info smaller-text">
+            <p>The <em>switch</em> statement functions in the same way as an else if statement, but structured differently. It is preferred to use a switch over else if when there are many conditions to check. A <em>break</em> statement is required at the end of each case block.</p>
+          </div>
+
+          ```js
+          let myBorough = "Brooklyn";
+          let output = "";
+
+          switch(myBorough) {
+            case "Brooklyn":
+              output = "Brooklyn is the best!";
+              break;
+            case "Bronx":
+              output = "The Bronx is cool too.";
+              break;
+            case "Manhattan":
+            case "Queens":
+            case "Staten Island":
+              output = "Oh, you're from on of those other boroughs. (" + myBorough + ")";
+              break;
+            default:
+              output = myBorough + " is not a borough";
+              break;
+          }
+
+          console.log(output);
+          ```
+        </script>
+      </section>
+
+      <section>
+        <h3>Additional examples</h3>
+
+        <div class="info">
+          <p>More examples of conditoinal statements are available at:</p>
+          <p><a href="https://www.w3schools.com/jsref/jsref_if.asp">https://www.w3schools.com/jsref/jsref_if.asp</a></p>
+          <p><a href="https://www.w3schools.com/js/js_switch.asp">https://www.w3schools.com/js/js_switch.asp</a></p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Loops
+
+          <div class="info smaller-text">
+            <p>Loops are a way to execute a block of code multiple times while a condition remains true. Typically, the parameters for the condition are modified by the code inside the loop so that the condition will eventually become true, otherwise the program will be stuck in the loop.</p>
+          </div>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### While Loops
+
+          <div class="info smaller-text">
+            <p>There are two types of while loops in JavaScript. The first is the standard while loop, which checks the condition before execution. The second is the do/while loop, which executes the statement once before checking the condition.</p>
+          </div>
+
+          ```js
+          let i = 0;
+
+          while (i < 4) {
+            console.log(i + " is less than 4");
+            i++;
+            // i++ is shorthand for increment i by 1.
+            // It is equivalent to i = i + 1;
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Do/While Loops
+
+          <div class="info smaller-text">
+            <p>The do/while loop variant executes the block at least once before checking the condition. The loop ends if the condition is not true.</p>
+          </div>
+
+          ```js
+          n = 0;
+
+          do {
+            console.log("The value is " + n);
+            n--;
+            // n-- is equivalent to n = n - 1;
+          }
+          while (n > 0);
+          ```
+        </script>
+      </section>
+
+
+      <section data-markdown>
+        <script type="text/template">
+          ### For Loops
+
+          <div class="info smaller-text">
+            <p>The for loop is a common way to write a while loop because it requires three statements that initialize the variable that will be used in the loop, defines the condition, and defines what statement to execute after each iteration of the loop.</p>
+          </div>
+
+          ```js
+          // Generic structure:
+          // for (initialize the variable; define the condition; perform after the loop) {
+          // }
+
+          for (i = 0; i < 4; i++) {
+            console.log(i + " is less than 4");
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### For/In Loops
+
+          <div class="info smaller-text">
+            <p>The for/in loop is a way to loop through an Object or an Array. If an Object is used, the program will loop through each key/property of the object. If an Array is used, it will iterate through each element of the Array. Since the property keys are given, to access the value, we need to use the [] method to access the value from the object.</p>
+          </div>
+
+          ```js
+          let library = {
+            address: "2035 Nostrand Ave, Brooklyn, NY 11210",
+            branch: "Clarendon",
+            system: "Brooklyn Public Library"
+          }
+
+          for (i in library) {
+            console.log(i + ": " + library[i]);
+          }
+          ```
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Arrays
+
+          <div class="info smaller-text">
+            <p>In programming, an <em>array</em> is a data structure that holds a collection of elements. Each element can be accessed with an index number starting from 0 (instead of 1).</p>
+            <p>In JavaScript, Arrays can contain multiple data types, but other programming languages require arrays to be of the same type (such as all integers, or all strings). An array is created using braces [] containing a comma-separated list of elements.</p>
+          </div>
+
+          ```js
+          let words = ["This", "is", "an", "array", "of", "strings"];
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Arrays
+
+          <div class="info smaller-text">
+            <p>You can select an element of the array using the index number (starting with 0) as shown below. For example, to get the third element in the array, you would use the index 2.</p>
+          </div>
+
+          ```js
+          let words = ["This", "is", "an", "array", "of", "strings"];
+          console.log(words[2]);
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Arrays
+
+          <div class="info smaller-text">
+            <p>One common property used on an array is the <em>length</em> property, which can tell you how many elements are in an array.</p>
+            <p>There are also many methods that can be used on an array to do things such as remove elements, combine arrays, add other elements, and iterate through the array. You can learn about them
+              <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp">in this reference</a>.</p>
+          </div>
+
+          ```js
+          let words = ["This", "is", "an", "array", "of", "strings"];
+          console.log(words.length);
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Looping through an array
+
+          <div class="info smaller-text">
+            <p>It is also possible to loop through each element of an array using a for/in loop.</p>
+          </div>
+
+          ```js
+          let words = ["This", "is", "an", "array", "of", "strings"];
+
+          for (i in words) {
+            console.log("The word is: " + words[i]);
+          }
+          ```
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <h2>Adding Interactivity</h2>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Events and Event Listeners
+
+          <div class="info smaller-text">
+            <p>An event is something that happens on a web page that the program recognizes. Examples include a user clicking on an element or hovering the mouse over an element. Events can also be internal to the program without user interaction, such as a page finishing loading. We will examine a few user-initiated events, but you can read about more
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Events">types of events here</a> or try <a
+                  href="https://www.w3schools.com/js/js_htmldom_events.asp">these examples</a>.</p>
+            <p></p>
+          </div>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Events and Event Listeners
+
+          <div class="info smaller-text">
+            <p>The following example will show several different ways to add the <em>onclick</em> event can be applied to any HTML element. The first is by using an <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">event attribute</a>. We use a button element in the example below, but you can use any type of element such as a paragraph.</p>
+          </div>
+
+          ```html
+          <button onclick="alert('This calls the alert function!')">
+            Alert!
+          </button>
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Events and Event Listeners
+
+          <div class="info smaller-text">
+            <p>If your function is more complicated, you should define a function separately in a script tag or a separate .js file instead of including it within the HTML tag. This makes your code more readable.</p>
+          </div>
+
+          ```html
+          <button onclick="clickButton()">Alert!</button>
+
+          <script>
+            function clickButton() {
+              // This is a multi-line function
+              let alertMessage = "This calls the alert function!";
+              alert(alertMessage);
+            }
+          </script>
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Events and Event Listeners
+
+          <div class="info smaller-text">
+            <p>A third way to add an onclick event is to use the addEventListener() method in JavaScript. To use this method, you need a way to select the button in JavaScript, such as using the value of the id property. <a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp">Read more about the syntax here.</a></p>
+          </div>
+
+          ```html
+          <button id="clickable">Alert!</button>
+
+          <script>
+            function clickButton() {
+              // This is a multi-line function
+              let alertMessage = "This calls the alert function!";
+              alert(alertMessage);
+            }
+
+            // The arguments passed into addEventListener are:
+            // 1. the event name "click"
+            // 2. the function name clickButton
+            document.getElementById("clickable").addEventListener("click", clickButton);
+          </script>
+          ```
+        </textarea>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <textarea data-template>
+          ### Forms and Input
+
+          <div class="info smaller-text">
+            <p>HTML forms are used to collect user input. They are created using a <em>form</em> element that contains one or more <em>input</em> elements. There are <a href="https://www.w3schools.com/html/html_form_input_types.asp"></a>multiple types if input elements and we will cover only a few, but you can <a href="https://www.w3schools.com/html/html_forms.asp">read more about HTML forms here.</a></p>
+          </div>
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Forms and Input
+
+          <div class="info smaller-text">
+            <p>You can also change the appearance of input fields and their labels using CSS. The default behavior for input and label is inline, so we use the br tag to add new lines in the example below. We can also use CSS (preferred method) to accomplish this.</p>
+          </div>
+
+          ```html
+          <form>
+            <input type="text"><br><br>
+            <input type="text" value="Default Value"><br><br>
+
+            <label for="first-name">Name:</label>
+            <input type="text" id="first-name"><br><br>
+
+            <input type="checkbox" name="hasLibraryCard" checked>I have a library card
+            <br><br>
+
+            <input type="submit">
+          </form>
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Forms and Input
+
+          <div class="info smaller-text">
+            <p class="smaller-text">We won't cover how to actually submit form data until next week's lesson, but we will learn how to connect JS events to the input fields during this lesson. In the following example, we use the oninput event to check the value that the user has input after each character typed. If it contains any numbers, an error message is generated.</p>
+          </div>
+
+          ```html
+          <form>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" oninput="validateName(this.value)">
+          </form>
+
+          <script>
+            function validateName(input) {
+              // We return to exit this function early if the string is empty.
+              if (input.length < 1) {
+                return;
+              }
+
+              // This uses a regular expression /\d/, which matches numbers.
+              if (/\d/.test(input)) {
+                console.log("Invalid name. Numbers detected in: " + input)
+              } else {
+                console.log(input + " is a valid name.")
+              }
+            }
+          </script>
+          ```
+        </textarea>
+      </section>
+    </section>
+
+    <section>
+      <h3>Additional Exercises</h3>
+
+      <div class="info smaller-text">
+        <p>There are many interesting and simple effects that you can create with events. Try to implement the following. Keep in mind that there are many ways to accomplish the same effect.</p>
+
+        <ul>
+          <li><a href="https://www.w3schools.com/js/js_htmldom_css.asp">Using the style property</a>, change the color of a button's text using the <a href="https://www.w3schools.com/jsref/event_onmouseover.asp">onmouseover event</a>.</li>
+          <li>Change the text of a button using the <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">innerHTML property</a> when you hover your mouse over it. Change the button's text back when you are no longer hovering by using <a href="https://www.w3schools.com/jsref/event_onmouseout.asp">onmouseout</a>.</li>
+          <li>Switch between displaying three different images every time you click on a button. (Hint: Use an array).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>Learning Resources</h3>
+
+      <div class="info smaller-text">
+        <p>Learning programming requires a lot of practice, resources, and repetition that we simply are unable to cover in this short course. I highly recommend trying out some of the courses and interactive training listed below to improve your knowledge of the subject.</p>
+
+        <p><a href="https://www.codecademy.com/learn/learn-javascript">Code Academy JavaScript course</a> -lessons are free, but a PRO account is required for quizzes and projects</p>
+        <p><a href="https://www.bklynlibrary.org/lynda">Lynda.com</a> - Free access with your Brooklyn Public Library card and PIN #</p>
+        <p><a href="https://codecombat.com/">Code Combat</a> - learn programming in a game</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Next week's lesson</h2>
+
+      <p class="info">
+        In the final lesson, we will learn how web services communicate with each other and write JavaScript to retrieve and use data.
+      </p>
+    </section>
+  </div>
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      { src: '../plugin/markdown/marked.js' },
+      { src: '../plugin/markdown/markdown.js' },
+      { src: '../plugin/notes/notes.js', async: true },
+      { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+</script>
+</body>
+</html>
