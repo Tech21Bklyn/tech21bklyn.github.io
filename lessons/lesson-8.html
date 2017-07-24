@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Tech 21 @ BPL Lesson 8 - Fetching and Presenting Data with JavaScript</title>
+
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/black.css">
+  <link rel="stylesheet" href="../css/tech21.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section
+        data-background-image="../img/Clarendon-white.png"
+        data-background-size="500px"
+        data-background-position="bottom 20px left 20px"
+    >
+      <h1>Tech 21 @ BPL</h1>
+      <h3 style="color: #ffbb33">Lesson 8</h3>
+      <h2>Fetching and Presenting Data with JavaScript</h2>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+
+      <div class="sub-header">This lesson will cover the following topics.</div>
+
+      <div class="info smaller-text">
+        <ul>
+          <li>How Web Applications Communicate</li>
+          <li>HTTP</li>
+          <li>JSON</li>
+          <li>API Examples</li>
+          <li>Fetching Data with JavaScript</li>
+          <li>End of Course Admin
+            <ul class="dashed">
+              <li>End of Course Surveys</li>
+              <li>Create Cred.ly Accounts to Receive Badges</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <section>
+        <h3>How Web Applications Communicate</h3>
+
+        <div class="info smaller-text">
+          <p>Data-driven applications must consume data to work. They may store data locally within the app, but many apps need to fetch data from somewhere else. This allows your app to take advantage of the functionality of an application or database that someone else built.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Protocols and Formats</h3>
+
+        <div class="info smaller-text">
+          <p>Since apps are written in different programming languages, there needs to be a way for them to communicate with one another.</p>
+
+          <p>To facilitate communication, protocols for sending and receiving data were developed along with formats for structuring that data. Additionally, developers created web services for applications so that they could be discovered and used on the web.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>APIs - Application Programmer Interfaces</h3>
+
+        <div class="info smaller-text">
+          <p>Developers created APIs to enable other developers and programs (either within the same program it is defined or externally) to access functions and data contained in their program. APIs describe how one program or component communicates or interfaces with another.</p>
+
+          <p>An example is the <a href="https://developers.google.com/maps/">Google Maps API</a>, which allows users to build apps using Google's massive geolocation database and services.</p>
+
+          <p>Some APIs are accessible without credentials, but most APIs will use an access token or key so that only authorized users or applications can use them. APIs may also throttle the number of requests that someone can make to conserve resources.</p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>HTTP</h3>
+
+        <div class="info smaller-text">
+          <p>HTTP or Hypertext Transfer Protocol is a way for applications to communicate based on a request-response protocol.</p>
+
+          <p>Typically, a browser makes a request and the server sends a response back in the form of HTML web page data. The request is made when the user types a URL into the browser or clicks on a link that starts with http:// (https://)</p>
+
+          <p>The data may also be returned in a different format such as text or JSON that can be used by another application..</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>HTTP Request Methods</h3>
+
+        <div class="info smaller-text">
+          <p>There are a number of HTTP request methods, but we will only cover a few. Think of these methods as types of actions.</p>
+
+          <p><em>GET</em>: This is the method used when you visit a URL in your browser. It is used to retrieve data for a specified resource. The data is returned in a response body along with a header containing information about the response.</p>
+
+          <p><em>POST</em>: This is used to send a request to a server asking it to accept data contained in the body of a request. This is used to create or update a resource such as posting a new comment to a discussion thread.</p>
+
+          <p><em>DELETE</em>: This is used to send a request to the server to delete a resource such as deleting an email.</p>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          <h3>HTTP GET query parameters</h3>
+
+          <div class="info smaller-text">
+            <p>You may have noticed that sometimes, a URL contains a ? followed by some words, equal signs, and & symbols. These are query parameters that are sent along with the request. The server parses these parameters and returns the appropriate response.</p>
+
+            <p>The example below contains a query parameter called address with the value = Clarendon Branch Library. The %20 in between each word is the character for a space since URLs don't contain spaces.</p>
+          </div>
+
+          ```
+          https://maps.googleapis.com/maps/api/geocode/json?address=Clarendon%20Branch%20Library
+          ```
+        </script>
+      </section>
+
+      <section>
+        <h3>HTTP Status Codes</h3>
+
+        <div class="info smaller-text">
+          <p>A response header will contain information about the request including a status code.</p>
+
+          <p><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">There are many different codes.</a> Some that you may encounter often are:</p>
+
+          <ul>
+            <li>200 OK: The request succeeded.</li>
+            <li>400 Bad Request: The server could not understand the request because it was not in the proper format. You should not repeat the request without modifying it.</li>
+            <li>401 Unauthorized: The request needs to be authenticated.</li>
+            <li>404 Not Found: The server did not find anything at the requested address.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Testing HTTP Requests with Postman</h3>
+
+        <div class="info smaller-text">
+          <p>We will use an application called Postman to create and view requests. Postman helps the developer view information about the response more easily than in the browser. It also helps the developer structure post requests, which you cannot create by simply typing a URL in the web browser.</p>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          <h3>JSON</h3>
+
+          <div class="info smaller-text">
+            <p>Data format is the other major component of how applications communicate. One of the most commonly used formats is
+              <a href="https://www.w3schools.com/js/js_json_syntax.asp">JSON</a> (JavaScript Object Notation). Another is
+              <a href="https://www.w3schools.com/xml/">XML</a> which we will not cover in this course.</p>
+
+            <p>You should notice that JSON looks very similar to what you have seen when printing out a JavaScript object in the console in that it contains a list of keys and their corresponding values separated by a comma.</p>
+          </div>
+
+          ```json
+          {
+            "libraryName": "Clarendon Branch Library",
+            "librarySystem": "Brooklyn Public Library",
+            "address": "2035 Nostrand Ave., Brooklyn, NY 11210"
+          }
+          ```
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          <h3>JSON</h3>
+
+          <div class="info smaller-text">
+            <p>JSON values can include strings, numbers, another JSON object, an array, a boolean, or null. Unlike in JavaScript, JSON values cannot be a function, a date, or undefined. This example shows an Array of JSON objects as the value of the branches key.</p>
+          </div>
+
+          ```json
+          {
+            "librarySystem": "Brooklyn Public Library",
+            "branches": [
+              {
+                "libraryName": "Clarendon Branch",
+                "address": "2035 Nostrand Ave, Brooklyn, NY 11210"
+              },
+              {
+                "libraryName": "Flatbush Branch",
+                "address": "22 Linden Blvd, Brooklyn, NY 11226"
+              }
+            ]
+          }
+          ```
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <h3>API Examples</h3>
+
+      <ul class="info smaller-text">
+        <li><a href="https://developers.google.com/maps/documentation/geocoding/start">Google Geocoding API</a></li>
+        <li><a href="https://developers.google.com/maps/documentation/directions/">Google Directions API</a></li>
+        <li><a href="https://opendata.cityofnewyork.us/">NYC Open Data API</a></li>
+        <li><a href="https://azure.microsoft.com/en-us/services/cognitive-services/">Microsoft Azure Cognitive Services</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ### Fetching Data with JavaScript
+
+          <div class="info smaller-text">
+            <p>Making requests manually is one way to use the data, but to make it reusable, we can write requests to retrieve the data in JavaScript. We can then transform the data into HTML to present on our page.</p>
+
+            <p>A simple flow would be to write a function to retrieve the data with a given set of parameters and then write another function to do something with that data. We may want to store the response in a database or in memory (store it in a variable) so that we don't have to keep making the same request to the other web service.</p>
+          </div>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### jQuery library
+
+          <div class="info smaller-text">
+            <p>The <a href="https://jquery.com/">jQuery</a> library is a popular library for simplifying the process of making requests to APIs as well as manipulating the DOM and handling events. Though there is a current trend towards developing web apps using frameworks that don't require jQuery, it is still useful to know since many existing applications use it and its API is simple to use.</p>
+
+            <p>A simple flow would be to write a function to retrieve the data with a given set of parameters and then write another function to do something with that data. We may want to store the response in a database or in memory (store it in a variable) so that we don't have to keep making the same request to the other web service.</p>
+          </div>
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### jQuery library
+
+          <div class="info smaller-text">
+            <p>To include jQuery in a project, you need to define the resource in a script tag. You can either host it locally on your server or use a CDN (Content Distribution Network) such as <a href="https://developers.google.com/speed/libraries/#jquery">Google's</a>. Include the following in your HTML.
+          </div>
+
+          ```html
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          ```
+
+          <div class="info smaller-text">
+            <p>To add jQuery in CodePen, click on Settings and select the JavaScript tab. In the Quick-add drop down, select jQuery.
+          </div>
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Requesting data with the .get() method.
+
+          <div class="info smaller-text">
+            <p>jQuery's methods can be accessed using either the jQuery class name or the shorthand dollar sign ($). With $.get(), we can make an HTTP request to a specified url.</p>
+
+            <p>This makes an asynchronous request, meaning that the program sends the request and then waits for a response before handling it. While waiting for the response, the program is able to continue executing other statements instead of being stuck waiting for the response.</p>
+          </div>
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Requesting data with the .get() method.
+
+          <div class="info smaller-text">
+            <p>We can use the following JavaScript to make a GET request:</p>
+          </div>
+
+          ```javascript
+          // https://api.jquery.com/jquery.get/
+          // jQuery.get( url [, data ] [, success ] [, dataType ] )
+          let url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+
+          $.get(url, function(data) {
+            console.log(data);
+          });
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Requesting data with the .get() method.
+
+          <div class="info smaller-text">
+            <p>The response is contained in a a key called "results" and is returned in the form of an array. Let's examine just the first object in the array.</p>
+          </div>
+
+          ```javascript
+          $.get(url, function(data) {
+            console.log(data.results[0]);
+          });
+          ```
+
+          <div class="info smaller-text">
+            <p>The JSON shows that this object contains an array of of address_components such as the name of the building and the street number. We can use something such as a for loop to parse each of the array elements.</p>
+          </div>
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Parsing the data in JavaScript.
+
+          <div class="info smaller-text">
+            <p>We can write a simple for loop to log the value of each element in the address_components array separately.</p>
+          </div>
+
+          ```javascript
+          let url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+
+          $.get(url, function(data) {
+            let addressComponents = data.results[0].address_components;
+
+            for (i in addressComponents) {
+              console.log(addressComponents[i]["long_name"]);
+            }
+          });
+          ```
+        </textarea>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <textarea data-template>
+          ### jQuery Methods
+
+          #### Element Selectors
+
+          <div class="info smaller-text">
+            <p>jQuery provides a simple API for selecting elements in the DOM. Previously, we used document.getElementById or document.getElementByClass to select elements in the DOM. With jQuery, we can use:</p>
+          </div>
+
+          ```javascript
+          $('#the-id');
+
+          $('.the-class-name');
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### jQuery Methods
+
+          <div class="info smaller-text">
+            <p>.append("[string]") - adds to the end of an element's content</p>
+            <p>.prepend("[string]") - adds to the beginning of an element's content</p>
+            <p>.add("[string]") - add elements to the matched element. You can pass a string of HTML into this method.</p>
+            <p>.html() - returns the current contents of an element</p>
+            <p>.text("[string]") - replace the content of the element</p>
+            <p>.css("[string]") - change the style of the element</p>
+            <p></p>
+          </div>
+
+          ```html
+          <p id="text">Hello World!</p>
+          ```
+          ```javascript
+          $('#text').append(' this goes after');
+          $('#text').prepend('this goes before ');
+          ```
+        </textarea>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <textarea data-template>
+          ### Using the Data to Generate HTML
+
+          <div class="info smaller-text">
+            <p>Let's use our knowledge of the jQuery methods to present the data from the API as HTML.</p>
+          </div>
+
+          ```html
+          <div id="container"></div>
+          ```
+
+          ```javascript
+          let url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+
+          $.get(url, function(data) {
+            let addressComponents = data.results[0].address_components;
+            let container = $('#container');
+            let addressParts = [];
+
+            for (i in addressComponents) {
+              let longName = addressComponents[i]["long_name"];
+              addressParts.push("<p>" + longName + "</p>")
+            }
+
+            container.append(addressParts);
+          });
+          ```
+        </textarea>
+      </section>
+    </section>
+    
+    <section>
+      <h3>End of Course</h3>
+      
+      <div class="info smaller-text">
+        <p>Congratulations on completing this 8 week course on introductory web development. This is only the beginning, so hopefully you will want to continue to learn about web development, design, programming, and related topics.</p>
+      </div>
+    </section>
+    
+    <section>
+      <h3>End of Course Admin</h3>
+      
+      <div class="info smaller-text">
+        <ul>
+          <li><a href="https://goo.gl/forms/76w6Fy6VdZAuXehA3">Complete the end of course survey</a></li>
+          <li>Create a <a href="https://credly.com/">Cred.ly</a> account to receive your completion badge.</li>
+          <li>Finalize the free domain names you want to use (.org or .net)</li>
+          <li>Continue working on your websites</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      { src: '../plugin/markdown/marked.js' },
+      { src: '../plugin/markdown/markdown.js' },
+      { src: '../plugin/notes/notes.js', async: true },
+      { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+</script>
+</body>
+</html>
